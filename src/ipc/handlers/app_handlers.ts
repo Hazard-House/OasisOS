@@ -493,7 +493,7 @@ async function ensureAppOffTestBranch(appId: number): Promise<void> {
     return;
   }
   throw new DyadError(
-    "OasisOS couldn't restore this app's real database settings after recording, so starting it now would run against the temporary test branch. Check your Neon connection, then try again so Dyad can finish recovery.",
+    "OasisOS couldn't restore this app's real database settings after recording, so starting it now would run against the temporary test branch. Check your Neon connection, then try again so OasisOS can finish recovery.",
     DyadErrorKind.Precondition,
   );
 }

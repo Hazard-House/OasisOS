@@ -305,7 +305,7 @@ export async function prepareIsolatedTestDatabase({
             `Failed to restart app ${app.id} back onto its real branch: ${error}`,
           );
           emit(
-            "Warning: Dyad restored your real database settings, but couldn't restart the preview. Restart the app manually before continuing.\n",
+            "Warning: OasisOS restored your real database settings, but couldn't restart the preview. Restart the app manually before continuing.\n",
             "setup",
           );
         }
@@ -939,7 +939,7 @@ async function prepareSupabaseTestUserIsolation({
                 if (!(error instanceof SupabaseTestUserCreationRejectedError))
                   throw error;
                 emit(
-                  "Warning: Supabase rejected default test-user creation with a database error (often caused by a signup trigger). Dyad verified that no user was created. Continuing without default sign-in credentials so test fixtures can create and clean up their own users and required records.\n",
+                  "Warning: Supabase rejected default test-user creation with a database error (often caused by a signup trigger). OasisOS verified that no user was created. Continuing without default sign-in credentials so test fixtures can create and clean up their own users and required records.\n",
                   "running",
                 );
                 return {};

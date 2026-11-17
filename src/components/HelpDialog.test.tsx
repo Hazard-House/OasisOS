@@ -678,7 +678,7 @@ describe("HelpDialog disclosures", () => {
     expect(body).toContain(
       "## System Information\nNot included by the reporter.",
     );
-    expect(body).not.toContain("- OasisOS Version:");
+    expect(body).not.toMatch(/- (?:OasisOS|Dyad) Version:/);
   });
 
   it("does not upload the session when it is unticked", async () => {

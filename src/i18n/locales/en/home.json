@@ -68,7 +68,7 @@
   "cpu": "CPU:",
   "systemMetrics": "System Metrics",
   "communityCodeNotice": "Community Code Notice",
-  "communityCodeWarning": "This code was created by a OasisOS community member, not our core team.",
+  "communityCodeWarning": "This code was created by an OasisOS community member, not our core team.",
   "communityCodeRisk": "Community code can be very helpful, but since it's built independently, it may have bugs, security risks, or could cause issues with your system. We can't provide official support if problems occur.",
   "communityCodeReview": "We recommend reviewing the code on GitHub first. Only proceed if you're comfortable with these risks.",
   "deleteItemTitle": "Delete {{itemType}}",

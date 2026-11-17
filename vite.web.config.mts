@@ -1,3 +1,4 @@
+import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
@@ -12,12 +13,20 @@ function oasisWebHtml() {
     name: "oasis-web-html",
     enforce: "post" as const,
     transformIndexHtml(html: string) {
+      if (html.includes("/ipc-bootstrap.js")) return html;
       return html.replace(
         "<head>",
         `<head>
     <script src="/ipc-bootstrap.js"></script>
     <link rel="icon" href="/favicon.png" />`,
       );
+    },
+    closeBundle() {
+      const nested = path.resolve(root, "dist/web/web/index.html");
+      const flat = path.resolve(root, "dist/web/index.html");
+      if (!fs.existsSync(nested)) return;
+      fs.renameSync(nested, flat);
+      fs.rmdirSync(path.dirname(nested));
     },
   };
 }
@@ -43,5 +52,9 @@ export default defineConfig({
   build: {
     outDir: path.resolve(root, "./dist/web"),
     emptyOutDir: true,
+    target: "es2022",
+    rollupOptions: {
+      input: path.resolve(root, "web/index.html"),
+    },
   },
 });

@@ -21,7 +21,7 @@ const STOP_CAUSES: Record<CancellationCause, string> = {
     "because the Claude Code session ended before the tests finished",
   "agent-cancelled": "because the agent turn that started it was cancelled",
   "app-deleted": "because the app is being deleted",
-  "app-quit": "because Dyad is quitting",
+  "app-quit": "because OasisOS is quitting",
 };
 
 /**

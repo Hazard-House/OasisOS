@@ -497,7 +497,7 @@ describe("Git collaboration actions (integration)", () => {
       { timeout: 30_000 },
     );
     expect(warning.textContent).toBe(
-      "You're working on main, but Dyad syncs feature." +
+      "You're working on main, but OasisOS syncs feature." +
         "feature was already up to date. 1 commit on main is not on GitHub's feature.",
     );
     expect(screen.queryByText("Successfully pushed to GitHub!")).toBeNull();

@@ -138,7 +138,7 @@
     "privacyNotice": "Ürünü geliştirmek için anonim telemetri verilerini kullanıyoruz. Kişisel veri toplanmaz.",
     "acceptAndContinue": "Kabul Et ve Devam Et",
     "shareAnonymousData": "Anonim veriler paylaşılsın mı?",
-    "helpImprove": "Anonim kullanım verileriyle OasisOS'ın gelişmesine yardımcı olun.",
+    "helpImprove": "Anonim kullanım verileriyle OasisOS'un gelişmesine yardımcı olun.",
     "noCodeOrMessages": "Not: bu, kodunuzu veya mesajlarınızı kaydetmez.",
     "learnMore": "Daha fazla bilgi edinin",
     "accept": "Kabul Et",
@@ -188,7 +188,7 @@
     "title": "Deneyler",
     "previewCookieIsolation": {
       "label": "Önizleme oturum açma çerezlerini yalıt",
-      "description": "Paylaşılan localhost üzerinde her uygulamanın HttpOnly oturum açma çerezlerini ayrı tutar. Varsayılan olarak açıktır. Değişiklikleri tüm önizlemelere uygulamak için OasisOS'ı yeniden başlatın.",
+      "description": "Paylaşılan localhost üzerinde her uygulamanın HttpOnly oturum açma çerezlerini ayrı tutar. Varsayılan olarak açıktır. Değişiklikleri tüm önizlemelere uygulamak için OasisOS'u yeniden başlatın.",
       "loading": "Ayar yükleniyor…",
       "loadError": "Ayar yüklenemedi"
     }
@@ -237,7 +237,7 @@
     "saveError": "Kaydetme Hatası",
     "envVarsOptional": "Ortam Değişkenleri (isteğe bağlı)",
     "envVarsHelpText": "Azure'u ortam değişkenleri aracılığıyla yapılandırmaya devam edebilirsiniz. Her iki değişken de mevcutsa ve hiçbir ayar kaydedilmediyse OasisOS bunları otomatik olarak kullanır.",
-    "envVarsPrecedence": "Ayarlar'da kaydedilen değerler ortam değişkenlerinden önceliklidir. Ortam değişkenlerini değiştirdikten sonra OasisOS'ı yeniden başlatın."
+    "envVarsPrecedence": "Ayarlar'da kaydedilen değerler ortam değişkenlerinden önceliklidir. Ortam değişkenlerini değiştirdikten sonra OasisOS'u yeniden başlatın."
   },
   "vertex": {
     "projectId": "Proje Kimliği",

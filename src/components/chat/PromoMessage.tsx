@@ -49,14 +49,14 @@ export const PROMO_MESSAGES: PromoMessageConfig[] = [
   },
   {
     id: "speech-to-text",
-    text: "Tired of typing? Talk to Dyad with your voice.",
+    text: "Tired of typing? Talk to OasisOS with your voice.",
     cta: "Get OasisOS Pro",
     target: { type: "trial-dialog" },
     weight: 3,
   },
   {
     id: "web-search",
-    text: "Let Dyad use the web for fresh information and better builds.",
+    text: "Let OasisOS use the web for fresh information and better builds.",
     cta: "Get OasisOS Pro",
     target: { type: "trial-dialog" },
     weight: 2,

@@ -2135,10 +2135,10 @@ async function sandboxEnvMatchesCapture(
 
 /** Shared by both drift checks, so the user reads one explanation. */
 const CONFIGURATION_CHANGED_MESSAGE =
-  "This app's database or run configuration changed while Dyad was preparing the test sandbox, so the run was stopped before it could use stale settings. Run the tests again.";
+  "This app's database or run configuration changed while OasisOS was preparing the test sandbox, so the run was stopped before it could use stale settings. Run the tests again.";
 
 const PROCESS_SETTLEMENT_FAILED_MESSAGE =
-  "OasisOS couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart Dyad to retry cleanup.";
+  "OasisOS couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart OasisOS to retry cleanup.";
 
 /**
  * The app configuration the snapshot was taken under.
@@ -2593,13 +2593,13 @@ async function executeAppTestsWithIsolation(
       : runtimeMode !== "host"
         ? {
             disclosure: `Tests run against your normal preview because isolated test servers aren't available in ${runtimeMode} runtime yet.`,
-            neonRefusal: `Isolated E2E test servers aren't available in ${runtimeMode} runtime yet, and Dyad won't run Neon tests against your real database. Switch to host runtime to run tests for this app.`,
+            neonRefusal: `Isolated E2E test servers aren't available in ${runtimeMode} runtime yet, and OasisOS won't run Neon tests against your real database. Switch to host runtime to run tests for this app.`,
           }
         : {
             disclosure:
               "Tests run against your normal preview because isolated test servers are turned off in Settings.",
             neonRefusal:
-              "Isolated test servers are turned off in Settings, and Dyad won't run Neon tests against your real database. Turn them back on to run tests for this app.",
+              "Isolated test servers are turned off in Settings, and OasisOS won't run Neon tests against your real database. Turn them back on to run tests for this app.",
           };
     if (sandboxUnavailable) {
       finalResult = withIsolationCleanupWarning(

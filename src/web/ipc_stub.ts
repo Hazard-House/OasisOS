@@ -178,6 +178,20 @@ const handlers: Record<string, (input: unknown) => unknown> = {
     isPathAvailable: true,
     isPathDefault: true,
   }),
+  "get-system-debug-info": () => ({
+    nodeVersion: "24.0.0",
+    pnpmVersion: null,
+    nodePath: "/usr/bin/node",
+    telemetryId: "oasis-web-demo",
+    telemetryConsent: "opted_out",
+    telemetryUrl: "",
+    dyadVersion: "web-demo",
+    platform: "linux",
+    architecture: "x64",
+    logs: "",
+    updaterLogs: null,
+    selectedLanguageModel: "OasisOS",
+  }),
   "open-external-url": (input) => {
     if (typeof input === "string") {
       window.open(input, "_blank", "noopener,noreferrer");

@@ -47,7 +47,7 @@ const DESCRIPTIONS: Record<CancellationCause, string> = {
   "claude-code-session-ended": "The Claude Code session ended",
   "agent-cancelled": "The agent turn was cancelled",
   "app-deleted": "The app is being deleted",
-  "app-quit": "Dyad is quitting",
+  "app-quit": "OasisOS is quitting",
 };
 
 export class CancellationReason extends DOMException {

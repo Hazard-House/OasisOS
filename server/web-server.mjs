@@ -23,7 +23,12 @@ const types = {
 };
 
 export function resolveWebPath(urlPath, webRoot = root) {
-  const pathname = decodeURIComponent(urlPath.split("?")[0] ?? "/");
+  let pathname;
+  try {
+    pathname = decodeURIComponent(urlPath.split("?")[0] ?? "/");
+  } catch {
+    return null;
+  }
   const relative = pathname.replace(/^\/+/, "");
   const candidate = path.resolve(webRoot, relative);
   if (candidate !== webRoot && !candidate.startsWith(webRoot + path.sep)) {

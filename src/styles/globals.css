@@ -77,7 +77,7 @@ body[data-scroll-locked] .app-region-drag {
   --destructive-foreground: #fff;
   --border: oklch(0.922 0.008 250);
   --input: oklch(0.922 0.008 250);
-  --ring: var(--brand-yellow);
+  --ring: var(--brand-navy);
   --chart-1: #092b49;
   --chart-2: #2563eb;
   --chart-3: #0d9488;

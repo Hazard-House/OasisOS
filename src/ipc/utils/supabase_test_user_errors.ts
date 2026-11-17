@@ -88,17 +88,17 @@ const NETWORK_GUIDANCE = {
     "Check network access and your Supabase project's availability.",
   UND_ERR_SOCKET: "Check network stability and firewall or proxy settings.",
   CERT_HAS_EXPIRED:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
   DEPTH_ZERO_SELF_SIGNED_CERT:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
   SELF_SIGNED_CERT_IN_CHAIN:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
   UNABLE_TO_VERIFY_LEAF_SIGNATURE:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
   UNABLE_TO_GET_ISSUER_CERT_LOCALLY:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
   ERR_TLS_CERT_ALTNAME_INVALID:
-    "Check certificate trust and any HTTPS-inspecting proxy used by Dyad.",
+    "Check certificate trust and any HTTPS-inspecting proxy used by OasisOS.",
 } as const;
 
 /** Project only known codes, never arbitrary messages, URLs, headers or bodies.
@@ -214,7 +214,7 @@ function unexpectedFailureDiagnostic(error: unknown): string {
     }
     current = fields.cause;
   }
-  return `Unexpected failure${details.size ? ` (${[...details].slice(0, 12).join(", ")})` : ""}. Review the Dyad application call sites and logs.`;
+  return `Unexpected failure${details.size ? ` (${[...details].slice(0, 12).join(", ")})` : ""}. Review the OasisOS application call sites and logs.`;
 }
 
 const USER_OPERATIONS = {
@@ -256,7 +256,7 @@ function userGuidance(
     case "bad_jwt":
     case "no_authorization":
     case "42501":
-      return "Dyad doesn't have permission to manage test accounts. Check your Supabase connection and permissions.";
+      return "OasisOS doesn't have permission to manage test accounts. Check your Supabase connection and permissions.";
     case "23000":
     case "23001":
     case "23502":
@@ -298,7 +298,7 @@ function userGuidance(
     return "OasisOS couldn't reach Supabase. Check your internet connection or VPN, then try again.";
   if (invalidResponse && responseExpected)
     return "OasisOS couldn't read Supabase's response. Try again in a moment.";
-  return "An unexpected error interrupted this step. Try again. If it keeps happening, share Dyad's logs with support.";
+  return "An unexpected error interrupted this step. Try again. If it keeps happening, share OasisOS's logs with support.";
 }
 
 /** Fixed, application-authored guidance; never pass provider response text. */
@@ -460,7 +460,7 @@ export function getSupabaseTestUserMessage(error: unknown): string | undefined {
 /** A database-create rejection for which we verified that no auth user exists. */
 export class SupabaseTestUserCreationRejectedError extends DyadError {
   readonly userMessage =
-    "Supabase rejected creation of the temporary test account with a database error. Review your database constraints and signup triggers in Supabase before trying again. Dyad verified that no user was created.";
+    "Supabase rejected creation of the temporary test account with a database error. Review your database constraints and signup triggers in Supabase before trying again. OasisOS verified that no user was created.";
 
   constructor() {
     super(

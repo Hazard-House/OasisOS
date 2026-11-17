@@ -114,7 +114,7 @@ export function describePushSummary(
     summary.commitsPushed === null
       ? null
       : summary.commitsPushed > 0
-        ? `Dyad pushed ${plural(summary.commitsPushed, "commit")} to ${branch}.`
+        ? `OasisOS pushed ${plural(summary.commitsPushed, "commit")} to ${branch}.`
         : `${branch} was already up to date.`;
   switch (summary.outcome) {
     case "pushed": {
@@ -151,7 +151,7 @@ export function describePushSummary(
       const current = summary.currentBranch;
       return {
         kind: "warning",
-        message: `You're working on ${current}, but Dyad syncs ${branch}.`,
+        message: `You're working on ${current}, but OasisOS syncs ${branch}.`,
         detail: sentences(
           pushedBranchStatus,
           missing > 0

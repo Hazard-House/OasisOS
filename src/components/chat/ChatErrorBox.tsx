@@ -45,7 +45,9 @@ export function ChatErrorBox({
     normalizedError.includes("dyad_free_model_quota_exceeded") ||
     normalizedError.includes("FREE_MODEL_QUOTA_EXCEEDED") ||
     normalizedError.includes("OasisOS Free has reached its daily limit.") ||
-    normalizedError.includes("OasisOS Free limit");
+    normalizedError.includes("OasisOS Free limit") ||
+    normalizedError.includes("Dyad Free has reached its daily limit.") ||
+    normalizedError.includes("Dyad Free limit");
   const { messagesLimit, resetTime } = useFreeAgentQuota();
   const {
     messagesLimit: freeModelMessagesLimit,

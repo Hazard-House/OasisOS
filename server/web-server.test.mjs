@@ -1,6 +1,5 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import http from "node:http";
 import os from "node:os";
 import path from "node:path";
 import test from "node:test";
@@ -9,6 +8,7 @@ import { createWebServer, resolveWebPath } from "./web-server.mjs";
 test("rejects paths that leave the web root", () => {
   const root = path.join(os.tmpdir(), "oasis-web-root");
   assert.equal(resolveWebPath("/../secret", root), null);
+  assert.equal(resolveWebPath("/%E0%A4%A", root), null);
 });
 
 test("serves a file and falls back to index.html", async () => {

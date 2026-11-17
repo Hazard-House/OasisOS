@@ -2,6 +2,8 @@
 FROM node:24-bookworm-slim AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
+COPY packages ./packages
+COPY native ./native
 RUN npm ci --ignore-scripts
 COPY . .
 RUN npm run build:web

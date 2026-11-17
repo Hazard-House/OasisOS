@@ -255,7 +255,7 @@ export async function createTempTestUser(
       /bad_jwt|invalid jwt/i.test(detail)
     ) {
       throw new SupabaseTestUserActionError(
-        `Supabase rejected the ${adminKey.isLegacyJwt ? "legacy service_role" : "secret"} key Dyad used to create the test user (${response.status}). Check the key and its permissions in Supabase under Settings → API Keys.`,
+        `Supabase rejected the ${adminKey.isLegacyJwt ? "legacy service_role" : "secret"} key OasisOS used to create the test user (${response.status}). Check the key and its permissions in Supabase under Settings → API Keys.`,
       );
     }
     if (isUserCreationDatabaseError(response.status, errorBody)) {

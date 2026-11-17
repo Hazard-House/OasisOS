@@ -188,7 +188,10 @@ export default function HomePage() {
               What do you want to build?
             </h1>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
-              Describe an idea. OasisOS builds the app on your computer.
+              {(window as Window & { __OASIS_WEB_DEMO__?: boolean })
+                .__OASIS_WEB_DEMO__
+                ? "This is a browser demo. Building apps needs the desktop app."
+                : "Describe an idea. OasisOS builds the app on your computer."}
             </p>
             <div className="mt-4 flex justify-center gap-3">
               <ImportAppButton

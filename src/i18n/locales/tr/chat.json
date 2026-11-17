@@ -121,7 +121,7 @@
     }
   },
   "dismissError": "Hatayı yoksay",
-  "askDyadToBuild": "OasisOS'dan oluşturmasını isteyin...",
+  "askDyadToBuild": "OasisOS'tan oluşturmasını isteyin...",
   "cancelGeneration": "Üretimi iptal et",
   "stoppingGeneration": "Durduruluyor…",
   "cancellationEndingTestRun": "Test çalışması bitiriliyor.",
@@ -407,7 +407,7 @@
     "foundBug": "Bir hata mı buldunuz? Yardım > Hata Bildir'e tıklayın",
     "reportBadResponse": "Kötü bir AI yanıtı mı bildirmek istiyorsunuz? Yardım'a tıklayarak sohbeti yükleyin",
     "watch": "İzleyin",
-    "creatorBuildApp": "OasisOS'ın yaratıcısı adım adım bir İncil uygulaması yapıyor",
+    "creatorBuildApp": "OasisOS'un yaratıcısı adım adım bir İncil uygulaması yapıyor",
     "gettingStuck": "Takıldınız mı? Şunu okuyun:",
     "debuggingTips": "hata ayıklama ipuçları",
     "advancedTip": "İleri düzey ipucu: Şunu özelleştirin:",
@@ -415,7 +415,7 @@
     "keepFocused": "AI'yı odakta tutmak ister misiniz? Yeni bir sohbet başlatın.",
     "whatsNext": "Sırada ne var bilmek ister misiniz? Şuna göz atın:",
     "roadmap": "yol haritası",
-    "likeDyad": "OasisOS'ı beğendiniz mi? Yıldız verin:",
+    "likeDyad": "OasisOS'u beğendiniz mi? Yıldız verin:",
     "gitHub": "GitHub"
   },
   "consent": {

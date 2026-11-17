@@ -216,7 +216,7 @@ function assertHistoryExplorerAvailable(
   }
   if (!settings.providerSettings?.auto?.apiKey) {
     throw new DyadError(
-      "explore_chat_history requires a OasisOS Pro auto provider API key",
+      "explore_chat_history requires an OasisOS Pro auto provider API key",
       DyadErrorKind.Precondition,
     );
   }

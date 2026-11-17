@@ -465,7 +465,7 @@ function PreviewNodeRequirement({
       if (isManagedNodeInstallCancelError(error)) {
         return;
       }
-      showError(error.message ?? "Failed to install Dyad-managed Node.js");
+      showError(error.message ?? "Failed to install OasisOS-managed Node.js");
     } finally {
       setIsInstallingManagedNode(false);
     }
@@ -543,7 +543,7 @@ function PreviewNodeRequirement({
                     Installing Node.js
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-foreground/80">
-                    Dyad is setting up a private Node.js runtime for previews.
+                    OasisOS is setting up a private Node.js runtime for previews.
                   </p>
                   <div className="mt-4">
                     <div className="h-2 overflow-hidden rounded-full bg-(--background-darker)">

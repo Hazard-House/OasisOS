@@ -6,4 +6,5 @@ if (!window.electron?.ipcRenderer) {
   installWebIpcStub();
 }
 
-await import("../renderer");
+// The renderer evaluates after this turn, so the stub is in place first.
+void import("../renderer");

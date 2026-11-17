@@ -11,7 +11,9 @@ describe("web IPC stub", () => {
       windowSessionId: string;
       mayMigrateLegacyChatTabSession: boolean;
     };
-    expect(bootstrap.windowSessionId).toMatch(/^[0-9a-f-]{36}$/);
+    expect(bootstrap.windowSessionId).toMatch(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i,
+    );
     expect(bootstrap.mayMigrateLegacyChatTabSession).toBe(false);
   });
 

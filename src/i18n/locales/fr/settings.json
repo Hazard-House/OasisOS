@@ -126,7 +126,7 @@
     "enableDyadPro": "Activer OasisOS Pro",
     "toggleDyadPro": "Activer ou désactiver OasisOS Pro",
     "apiKeyEmpty": "La clé d'API ne peut pas être vide.",
-    "errorTogglingPro": "Erreur lors du changement d'état de OasisOS Pro\u00a0: {{error}}",
+    "errorTogglingPro": "Erreur lors du changement d'état d'OasisOS Pro\u00a0: {{error}}",
     "failedSaveApiKey": "Échec de l'enregistrement de la clé d'API.",
     "failedDeleteApiKey": "Échec de la suppression de la clé d'API."
   },

@@ -115,7 +115,7 @@ export function RuntimeModeSelector() {
       </SettingField>
       {showCloudSandboxOption && !hasCloudSandboxAccess && (
         <div className="text-sm text-muted-foreground bg-muted/40 p-2 rounded">
-          Cloud sandboxes are a OasisOS Pro feature.{" "}
+          Cloud sandboxes are an OasisOS Pro feature.{" "}
           <button
             type="button"
             className="underline font-medium cursor-pointer text-primary"
