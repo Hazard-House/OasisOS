@@ -178,13 +178,13 @@ describe("ProviderSettingsPage", () => {
     });
   });
 
-  it("resumes an implicit first prompt with the new Dyad Pro default", async () => {
+  it("resumes an implicit first prompt with the new OasisOS Pro default", async () => {
     mocks.hasArmedPayload = true;
     mocks.validateProviderApiKey.mockResolvedValue(undefined);
     mocks.updateSettings.mockResolvedValue(undefined);
 
     renderProviderSettingsPage("auto");
-    await saveApiKey("Dyad", "auto");
+    await saveApiKey("OasisOS", "auto");
 
     await waitFor(() =>
       expect(mocks.sendFirstPrompt).toHaveBeenCalledWith({

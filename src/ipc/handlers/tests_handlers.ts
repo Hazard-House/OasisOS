@@ -2138,7 +2138,7 @@ const CONFIGURATION_CHANGED_MESSAGE =
   "This app's database or run configuration changed while Dyad was preparing the test sandbox, so the run was stopped before it could use stale settings. Run the tests again.";
 
 const PROCESS_SETTLEMENT_FAILED_MESSAGE =
-  "Dyad couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart Dyad to retry cleanup.";
+  "OasisOS couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart Dyad to retry cleanup.";
 
 /**
  * The app configuration the snapshot was taken under.
@@ -2536,8 +2536,8 @@ async function executeAppTestsWithIsolation(
         : undefined);
     const restoreMessage =
       provider === "supabase-test-user"
-        ? "Dyad couldn't delete the temporary test user it created in your Supabase project. Your app settings were not changed; Dyad will retry the deletion on next startup."
-        : "Dyad couldn't finish cleaning up the isolated test database. Your app settings were not changed; Dyad will retry remote cleanup on next startup.";
+        ? "OasisOS couldn't delete the temporary test user it created in your Supabase project. Your app settings were not changed; OasisOS will retry the deletion on next startup."
+        : "OasisOS couldn't finish cleaning up the isolated test database. Your app settings were not changed; OasisOS will retry remote cleanup on next startup.";
     return {
       ...result,
       // Appended rather than substituted: an isolation-setup failure explains
@@ -3127,7 +3127,7 @@ async function executeAppTestsWithIsolation(
                 results: [],
                 infraError: {
                   message:
-                    "Dyad couldn't authorize the isolated test server with Neon Auth, so the tests were not run. Check your Neon connection and try again.",
+                    "OasisOS couldn't authorize the isolated test server with Neon Auth, so the tests were not run. Check your Neon connection and try again.",
                 },
                 isolation: prepared.isolation,
               };

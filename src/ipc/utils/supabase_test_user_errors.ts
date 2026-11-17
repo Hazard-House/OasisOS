@@ -218,11 +218,11 @@ function unexpectedFailureDiagnostic(error: unknown): string {
 }
 
 const USER_OPERATIONS = {
-  create: "Dyad couldn't prepare a temporary test account in Supabase.",
-  delete: "Dyad couldn't remove the temporary test account from Supabase.",
-  verify: "Dyad couldn't check whether the test account was created.",
-  rls: "Dyad couldn't check your Supabase data protections.",
-  adminKey: "Dyad couldn't access your Supabase project to set up tests.",
+  create: "OasisOS couldn't prepare a temporary test account in Supabase.",
+  delete: "OasisOS couldn't remove the temporary test account from Supabase.",
+  verify: "OasisOS couldn't check whether the test account was created.",
+  rls: "OasisOS couldn't check your Supabase data protections.",
+  adminKey: "OasisOS couldn't access your Supabase project to set up tests.",
 } as const;
 
 const CERTIFICATE_CODES = new Set([
@@ -278,7 +278,7 @@ function userGuidance(
       return "The temporary test account could not be found. Try running the tests again.";
   }
   if (status === 401 || status === 403)
-    return "Dyad couldn't access your Supabase project. Check your Supabase connection and permissions.";
+    return "OasisOS couldn't access your Supabase project. Check your Supabase connection and permissions.";
   if (status === 429)
     return "Supabase is receiving too many requests. Wait a moment, then try again.";
   if (status !== undefined)
@@ -288,16 +288,16 @@ function userGuidance(
 
   const { codes, timedOut, invalidResponse } = transportFailure(cause);
   if (codes.some((code) => CERTIFICATE_CODES.has(code)))
-    return "Dyad couldn't establish a secure connection to Supabase. Check whether your VPN or security software is blocking the connection, then try again.";
+    return "OasisOS couldn't establish a secure connection to Supabase. Check whether your VPN or security software is blocking the connection, then try again.";
   if (
     timedOut ||
     codes.some((code) => code === "ETIMEDOUT" || code.endsWith("_TIMEOUT"))
   )
     return "Supabase didn't respond in time. Check your internet connection and try again in a moment.";
   if (codes.length)
-    return "Dyad couldn't reach Supabase. Check your internet connection or VPN, then try again.";
+    return "OasisOS couldn't reach Supabase. Check your internet connection or VPN, then try again.";
   if (invalidResponse && responseExpected)
-    return "Dyad couldn't read Supabase's response. Try again in a moment.";
+    return "OasisOS couldn't read Supabase's response. Try again in a moment.";
   return "An unexpected error interrupted this step. Try again. If it keeps happening, share Dyad's logs with support.";
 }
 
@@ -434,7 +434,7 @@ class SupabaseTestUserStepError extends DyadError {
         ? error.message
         : step === "cleanup"
           ? userGuidance(error)
-          : `Dyad couldn't prepare test data in Supabase. ${userGuidance(error)}`);
+          : `OasisOS couldn't prepare test data in Supabase. ${userGuidance(error)}`);
     this.userMessage =
       step === "cleanup" &&
       !(

@@ -132,8 +132,8 @@ export function SubscriptionConnectionStatus() {
           {(!settings || hasPro) && (
             <p>
               {!settings
-                ? "Checking Dyad Pro status…"
-                : "Uses up to 1.5 Dyad Pro credits / 1 million tokens processed."}
+                ? "Checking OasisOS Pro status…"
+                : "Uses up to 1.5 OasisOS Pro credits / 1 million tokens processed."}
             </p>
           )}
         </div>

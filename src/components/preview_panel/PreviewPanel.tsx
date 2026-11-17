@@ -625,7 +625,7 @@ function PreviewNodeRequirement({
               {isCheckFailed && (
                 <p className="mt-4 rounded-md border border-amber-200 bg-amber-50 px-3 py-2 text-left text-sm text-amber-800 dark:border-amber-500/30 dark:bg-amber-500/10 dark:text-amber-200">
                   <AlertCircle className="mr-1.5 inline size-3.5 align-[-2px]" />
-                  Dyad couldn't check for Node.js. It will keep trying.
+                  OasisOS couldn't check for Node.js. It will keep trying.
                 </p>
               )}
 

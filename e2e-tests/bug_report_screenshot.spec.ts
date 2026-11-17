@@ -200,7 +200,7 @@ test("report a bug with a screenshot", async ({ po }) => {
   // Capturing brings the form back with the screenshot on it.
   await bar.getByRole("button", { name: "Capture screenshot" }).click();
   await expect(
-    po.page.getByAltText("Screenshot of the Dyad window"),
+    po.page.getByAltText("Screenshot of the OasisOS window"),
   ).toBeVisible({ timeout: Timeout.MEDIUM });
   await expect(bar).not.toBeVisible();
   // The image is about to become public, so the reporter is told while they
@@ -218,7 +218,7 @@ test("report a bug with a screenshot", async ({ po }) => {
   // Embedded, so there is nothing to paste and nothing to ask about.
   expect(body).toContain("Screenshot status: uploaded");
   expect(body).toContain(
-    `![Screenshot of the Dyad window](${SIGNED_SCREENSHOT.publicUrl})`,
+    `![Screenshot of the OasisOS window](${SIGNED_SCREENSHOT.publicUrl})`,
   );
   expect(body).not.toContain("Paste your screenshot here");
   await expect(po.page.getByRole("dialog")).toHaveCount(0);
@@ -289,7 +289,7 @@ test("falls back to pasting when the screenshot upload fails", async ({
     const bar = po.page.getByTestId("screenshot-capture-bar");
     await bar.getByRole("button", { name: "Capture screenshot" }).click();
     await expect(
-      po.page.getByAltText("Screenshot of the Dyad window"),
+      po.page.getByAltText("Screenshot of the OasisOS window"),
     ).toBeVisible({ timeout: Timeout.MEDIUM });
     await expect(description).toHaveValue("The generated page is blank.");
 

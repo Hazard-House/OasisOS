@@ -33,6 +33,8 @@ import {
   useFirstPromptSend,
 } from "@/first_prompt/FirstPromptProvider";
 import { getHomeDefaultChatMode } from "@/lib/homeChatMode";
+// @ts-ignore
+import logo from "../../assets/logo.svg";
 
 // Adding an export for attachments
 export interface HomeSubmitOptions {
@@ -181,11 +183,12 @@ export default function HomePage() {
       <div className="flex flex-col items-center justify-center max-w-3xl w-full m-auto p-8 relative">
         <div className="w-full">
           <div className="mb-6 text-center">
+            <img src={logo} alt="OasisOS" className="mx-auto mb-5 h-16 w-16" />
             <h1 className="text-4xl font-semibold tracking-tight text-foreground">
               What do you want to build?
             </h1>
             <p className="mx-auto mt-3 max-w-2xl text-base leading-7 text-muted-foreground">
-              Describe your idea. Dyad will turn it into a working app.
+              Describe an idea. OasisOS builds the app on your computer.
             </p>
             <div className="mt-4 flex justify-center gap-3">
               <ImportAppButton

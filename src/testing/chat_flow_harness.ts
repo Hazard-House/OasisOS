@@ -349,7 +349,7 @@ export async function setupChatFlowHarness(
     // The clear drops anything a previous harness in this process cached.
     process.env.DYAD_MCP_CATALOG_URL ??= `${fakeLlmUrl}/api/mcp-catalog`;
     clearMcpCatalogCacheForTests();
-    // Always fake the Dyad Pro user-info endpoint: any test that configures an
+    // Always fake the OasisOS Pro user-info endpoint: any test that configures an
     // auto API key would otherwise send get-user-budget requests to the real
     // api.dyad.sh.
     process.env.DYAD_USER_INFO_URL = `${fakeLlmUrl}/api/user/info`;

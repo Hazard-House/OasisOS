@@ -40,13 +40,13 @@
     "activeRuntime": "Actif\u00a0:",
     "nodeRuntimeActiveVersion": "Node {{version}} - {{source}}",
     "nodeRuntimeSource": {
-      "managed": "Géré par Dyad",
+      "managed": "Géré par OasisOS",
       "custom": "Chemin personnalisé",
       "system": "Système"
     },
     "systemNodeTooOld": "Le Node.js du système est trop ancien",
     "noUsableNodeFound": "Aucun Node.js utilisable trouvé",
-    "systemNodeTooOldDescription": "Dyad nécessite Node.js v20 ou plus récent sur le système, ou un environnement géré.",
+    "systemNodeTooOldDescription": "OasisOS nécessite Node.js v20 ou plus récent sur le système, ou un environnement géré.",
     "managedRuntimeVersion": "Environnement géré\u00a0: Node {{version}}",
     "runtimeSystem": "Système",
     "runtimeManaged": "Géré",
@@ -69,10 +69,10 @@
     "resetToSystemNodePath": "Rétablir le chemin Node.js du système",
     "resetNodePathFailed": "Échec de la réinitialisation du chemin de Node.js\u00a0: {{message}}",
     "runtimePreferenceUpdateFailed": "Échec de la mise à jour de la préférence d'environnement Node.js\u00a0: {{message}}",
-    "managedNodeInstalled": "Node.js géré par Dyad installé avec succès",
-    "managedNodeInstallFailed": "Échec de l'installation de Node.js géré par Dyad",
-    "managedNodeRemoved": "Node.js géré par Dyad supprimé",
-    "managedNodeRemoveFailed": "Échec de la suppression de Node.js géré par Dyad"
+    "managedNodeInstalled": "Node.js géré par OasisOS installé avec succès",
+    "managedNodeInstallFailed": "Échec de l'installation de Node.js géré par OasisOS",
+    "managedNodeRemoved": "Node.js géré par OasisOS supprimé",
+    "managedNodeRemoveFailed": "Échec de la suppression de Node.js géré par OasisOS"
   },
   "workflow": {
     "title": "Paramètres du flux de travail",
@@ -123,10 +123,10 @@
     "errorLoadingSettings": "Erreur de chargement des paramètres",
     "couldNotLoadProvider": "Impossible de charger les données du fournisseur\u00a0: {{message}}",
     "couldNotLoadSettings": "Impossible de charger les données de configuration\u00a0: {{message}}",
-    "enableDyadPro": "Activer Dyad Pro",
-    "toggleDyadPro": "Activer ou désactiver Dyad Pro",
+    "enableDyadPro": "Activer OasisOS Pro",
+    "toggleDyadPro": "Activer ou désactiver OasisOS Pro",
     "apiKeyEmpty": "La clé d'API ne peut pas être vide.",
-    "errorTogglingPro": "Erreur lors du changement d'état de Dyad Pro\u00a0: {{error}}",
+    "errorTogglingPro": "Erreur lors du changement d'état de OasisOS Pro\u00a0: {{error}}",
     "failedSaveApiKey": "Échec de l'enregistrement de la clé d'API.",
     "failedDeleteApiKey": "Échec de la suppression de la clé d'API."
   },
@@ -138,7 +138,7 @@
     "privacyNotice": "Nous utilisons des données de télémétrie anonymes pour améliorer le produit. Aucune donnée personnelle n'est collectée.",
     "acceptAndContinue": "Accepter et continuer",
     "shareAnonymousData": "Partager des données anonymes\u00a0?",
-    "helpImprove": "Aidez-nous à améliorer Dyad grâce à des données d'utilisation anonymes.",
+    "helpImprove": "Aidez-nous à améliorer OasisOS grâce à des données d'utilisation anonymes.",
     "noCodeOrMessages": "Remarque\u00a0: votre code et vos messages ne sont pas enregistrés.",
     "learnMore": "En savoir plus",
     "accept": "Accepter",
@@ -188,7 +188,7 @@
     "title": "Expériences",
     "previewCookieIsolation": {
       "label": "Isoler les cookies de connexion de l'aperçu",
-      "description": "Sépare les cookies de connexion HttpOnly de chaque application sur localhost. Activé par défaut. Redémarrez Dyad pour appliquer les changements à tous les aperçus.",
+      "description": "Sépare les cookies de connexion HttpOnly de chaque application sur localhost. Activé par défaut. Redémarrez OasisOS pour appliquer les changements à tous les aperçus.",
       "loading": "Chargement du paramètre…",
       "loadError": "Impossible de charger le paramètre"
     }
@@ -221,7 +221,7 @@
   },
   "azure": {
     "configured": "Azure OpenAI configuré",
-    "configuredDescription": "Dyad utilisera les identifiants enregistrés dans les paramètres pour les modèles Azure OpenAI.",
+    "configuredDescription": "OasisOS utilisera les identifiants enregistrés dans les paramètres pour les modèles Azure OpenAI.",
     "usingEnvVars": "Utilisation des variables d'environnement",
     "usingEnvVarsDescription": "AZURE_API_KEY et AZURE_RESOURCE_NAME sont définies. Les valeurs enregistrées ci-dessous les remplaceront.",
     "configRequired": "Configuration d'Azure OpenAI requise",
@@ -236,8 +236,8 @@
     "configNeededDescription": "Les requêtes Azure OpenAI nécessitent un nom de ressource et une clé d'API. Saisissez-les ci-dessus ou fournissez les variables d'environnement à la place.",
     "saveError": "Erreur d'enregistrement",
     "envVarsOptional": "Variables d'environnement (facultatif)",
-    "envVarsHelpText": "Vous pouvez continuer à configurer Azure avec des variables d'environnement. Si les deux variables sont présentes et qu'aucun paramètre n'est enregistré, Dyad les utilisera automatiquement.",
-    "envVarsPrecedence": "Les valeurs enregistrées dans les paramètres ont priorité sur les variables d'environnement. Redémarrez Dyad après avoir modifié des variables d'environnement."
+    "envVarsHelpText": "Vous pouvez continuer à configurer Azure avec des variables d'environnement. Si les deux variables sont présentes et qu'aucun paramètre n'est enregistré, OasisOS les utilisera automatiquement.",
+    "envVarsPrecedence": "Les valeurs enregistrées dans les paramètres ont priorité sur les variables d'environnement. Redémarrez OasisOS après avoir modifié des variables d'environnement."
   },
   "vertex": {
     "projectId": "ID du projet",
@@ -311,6 +311,6 @@
     "updateProvider": "Mettre à jour le fournisseur",
     "failedCreate": "Échec de la création du fournisseur personnalisé"
   },
-  "manageDyadPro": "Gérer l'abonnement Dyad Pro",
-  "setupDyadPro": "Configurer l'abonnement Dyad Pro"
+  "manageDyadPro": "Gérer l'abonnement OasisOS Pro",
+  "setupDyadPro": "Configurer l'abonnement OasisOS Pro"
 }

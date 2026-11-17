@@ -297,7 +297,7 @@ describe("getModelClient", () => {
           providerSettings: { openai: { apiKey: { value: "test-api" } } },
         } as unknown as UserSettings,
       ),
-    ).rejects.toThrow("Enable Dyad Pro");
+    ).rejects.toThrow("Enable OasisOS Pro");
   });
   test("an explicit auxiliary model does not inherit the default subscription connection", async () => {
     const { modelClient } = await getModelClient(
@@ -872,7 +872,7 @@ describe("getModelClient", () => {
     expect(runtimeModel).toMatchObject({ provider: "auto", name: "auto" });
   });
 
-  test("adds OpenRouter free as a regular auto fallback only outside Dyad Pro", async () => {
+  test("adds OpenRouter free as a regular auto fallback only outside OasisOS Pro", async () => {
     const { modelClient, isEngineEnabled } = await getModelClient(
       {
         provider: "auto",
@@ -904,7 +904,7 @@ describe("getModelClient", () => {
     expect(isEngineEnabled).toBeFalsy();
   });
 
-  test("routes Dyad Free through its dedicated engine model", async () => {
+  test("routes OasisOS Free through its dedicated engine model", async () => {
     const { modelClient } = await getModelClient(
       {
         provider: "auto",
@@ -985,7 +985,7 @@ describe("getModelClient", () => {
     expect(runtimeModel).toEqual({ provider: "auto", name: "balanced" });
   });
 
-  test("rejects Auto (balanced) without Dyad Pro instead of falling back", async () => {
+  test("rejects Auto (balanced) without OasisOS Pro instead of falling back", async () => {
     await expect(
       getModelClient({ provider: "auto", name: "balanced" }, {
         enableDyadPro: false,
@@ -995,7 +995,7 @@ describe("getModelClient", () => {
       } as unknown as UserSettings),
     ).rejects.toMatchObject({
       message:
-        "Auto (balanced) requires Dyad Pro. Switch to another model or enable Dyad Pro.",
+        "Auto (balanced) requires OasisOS Pro. Switch to another model or enable OasisOS Pro.",
     });
   });
 

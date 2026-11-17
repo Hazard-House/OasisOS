@@ -1632,7 +1632,7 @@ async function handleDeepLinkReturn(url: string) {
         apiKey,
       });
     } catch (error) {
-      showDeepLinkSettingsError("save Dyad Pro settings", error);
+      showDeepLinkSettingsError("save OasisOS Pro settings", error);
       return;
     }
     // Send message to renderer to trigger re-render

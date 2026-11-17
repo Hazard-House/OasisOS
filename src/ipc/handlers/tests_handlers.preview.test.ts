@@ -921,7 +921,7 @@ test("prints a fixture secret", async ({}, testInfo) => {
       if (runnerFails) {
         expect(message).toContain("runner unavailable");
         expect(message!.indexOf("runner unavailable")).toBeLessThan(
-          message!.indexOf("Dyad couldn't"),
+          message!.indexOf("OasisOS couldn't"),
         );
         expect(logs).toContain("Test runner also failed");
         expect(logs).not.toContain("runner unavailable");

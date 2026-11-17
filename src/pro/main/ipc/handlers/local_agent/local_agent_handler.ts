@@ -866,8 +866,8 @@ export async function handleLocalAgentStream(
   ) {
     const errorMessage =
       referencedApps.length > 0
-        ? "Referencing other apps (@app:Name) in local-agent mode requires Dyad Pro. Please enable Dyad Pro in Settings → Pro."
-        : "Agent v2 requires Dyad Pro. Please enable Dyad Pro in Settings → Pro.";
+        ? "Referencing other apps (@app:Name) in local-agent mode requires OasisOS Pro. Please enable OasisOS Pro in Settings → Pro."
+        : "Agent v2 requires OasisOS Pro. Please enable OasisOS Pro in Settings → Pro.";
     safeSend(event.sender, "chat:response:error", {
       chatId: req.chatId,
       invocationRef: req.invocationRef,
@@ -2731,8 +2731,8 @@ function getErrorResponseBody(error: unknown, depth = 0): string | undefined {
 const FREE_MODEL_QUOTA_MARKERS = [
   "dyad_free_model_quota_exceeded",
   "FREE_MODEL_QUOTA_EXCEEDED",
-  "Dyad Free has reached its daily limit.",
-  "Dyad Free limit",
+  "OasisOS Free has reached its daily limit.",
+  "OasisOS Free limit",
 ];
 
 function getErrorMessageWithDetails(error: unknown): string {

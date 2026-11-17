@@ -175,7 +175,7 @@ export function describePushSummary(
       if (summary.remoteTip === null || !summary.head) {
         return {
           kind: "warning",
-          message: "Dyad couldn't confirm the push.",
+          message: "OasisOS couldn't confirm the push.",
           detail:
             summary.remoteTip === null
               ? `Git reported success, but ${providerLabel}'s ${branch} couldn't be read afterwards.`

@@ -338,7 +338,7 @@ export async function allocateE2eTestPort(
   // no free port to give, which is an environment problem the user acts on, not
   // a Dyad bug to record as a product exception.
   throw new DyadError(
-    "Dyad couldn't find a free port for the isolated test server. Close some running servers and try again.",
+    "OasisOS couldn't find a free port for the isolated test server. Close some running servers and try again.",
     DyadErrorKind.Precondition,
   );
 }
@@ -905,7 +905,7 @@ export async function startE2eTestRuntime(
   // already a classified DyadError (an abort, a Precondition from readiness).
   if (lastError instanceof PortInUseError) {
     throw new DyadError(
-      `Dyad couldn't get a free port for the isolated test server: ${lastError.message}`,
+      `OasisOS couldn't get a free port for the isolated test server: ${lastError.message}`,
       DyadErrorKind.Precondition,
     );
   }

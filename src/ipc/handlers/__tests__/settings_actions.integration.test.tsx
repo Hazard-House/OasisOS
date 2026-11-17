@@ -116,7 +116,7 @@ describe("settings actions (integration)", () => {
     );
   });
 
-  it("validates Dyad Pro keys before saving provider settings", async () => {
+  it("validates OasisOS Pro keys before saving provider settings", async () => {
     resetSettings();
 
     harness.mountSurface({
@@ -125,7 +125,7 @@ describe("settings actions (integration)", () => {
     });
 
     const keyInput = await screen.findByRole("textbox", {
-      name: "Set Dyad API Key",
+      name: "Set OasisOS API Key",
     });
     fireEvent.change(keyInput, { target: { value: "invalid-dyad-key" } });
     fireEvent.click(screen.getByRole("button", { name: "Save Key" }));

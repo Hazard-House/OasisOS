@@ -133,9 +133,9 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
   const { hasArmedPayload } = useFirstPromptSaga();
   const resumeFirstPrompt = useFirstPromptProviderResume();
 
-  // Use fetched data (or defaults for Dyad)
+  // Use fetched data (or the product name for the built-in provider)
   const providerDisplayName = isDyad
-    ? "Dyad"
+    ? "OasisOS"
     : (providerData?.name ?? "Unknown Provider");
   const providerWebsiteUrl = providerData?.websiteUrl;
   const hasFreeTier = isDyad ? false : providerData?.hasFreeTier;
@@ -242,7 +242,7 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
       }
 
       const isFirstProviderSetup = !isAnyProviderSetup();
-      // Check if this is the first time user is setting up Dyad Pro
+      // Check if this is the first time user is setting up OasisOS Pro
       const isNewDyadProSetup = isDyad && settings && !hasDyadProKey(settings);
 
       const settingsUpdate: Partial<UserSettings> = {
@@ -274,7 +274,7 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
         setShowStartBuildingBanner(true);
       }
 
-      // Refetch user budget when Dyad Pro key is saved
+      // Refetch user budget when OasisOS Pro key is saved
       if (isDyad) {
         queryClient.invalidateQueries({ queryKey: queryKeys.userBudget.info });
       }
@@ -342,7 +342,7 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
     }
   };
 
-  // --- Toggle Dyad Pro Handler ---
+  // --- Toggle OasisOS Pro Handler ---
   const handleToggleDyadPro = async (enabled: boolean) => {
     setIsSaving(true);
     try {
@@ -350,7 +350,7 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
         enableDyadPro: enabled,
       });
     } catch (error: any) {
-      showError(`Error toggling Dyad Pro: ${error}`);
+      showError(`Error toggling OasisOS Pro: ${error}`);
     } finally {
       setIsSaving(false);
     }
@@ -567,13 +567,13 @@ export function ProviderSettingsPage({ provider }: ProviderSettingsPageProps) {
           {isDyad && !settingsLoading && (
             <div className="mt-6 flex items-center justify-between p-4 bg-(--background-lightest) rounded-lg border">
               <div>
-                <h3 className="font-medium">Enable Dyad Pro</h3>
+                <h3 className="font-medium">Enable OasisOS Pro</h3>
                 <p className="text-sm text-gray-600 dark:text-gray-400">
-                  Toggle to enable Dyad Pro
+                  Toggle to enable OasisOS Pro
                 </p>
               </div>
               <Switch
-                aria-label="Enable Dyad Pro"
+                aria-label="Enable OasisOS Pro"
                 checked={settings?.enableDyadPro}
                 onCheckedChange={handleToggleDyadPro}
                 disabled={isSaving}

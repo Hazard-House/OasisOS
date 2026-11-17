@@ -199,6 +199,13 @@ function RootLayoutContent({ children }: { children: ReactNode }) {
                 <TitleBar />
                 <AppSidebar />
                 <div className="flex h-screenish min-w-0 flex-1 flex-col overflow-hidden mt-[var(--layout-title-bar-offset)] border-l border-border bg-background">
+                  {(window as Window & { __OASIS_WEB_DEMO__?: boolean })
+                    .__OASIS_WEB_DEMO__ && (
+                    <p className="border-b border-white/10 bg-[#092b49] px-4 py-2 text-center text-sm text-white">
+                      Browser demo. You can look around. Building apps still
+                      needs the desktop app.
+                    </p>
+                  )}
                   <SubscriptionStatusBanner />
                   <div
                     id="layout-main-content-container"

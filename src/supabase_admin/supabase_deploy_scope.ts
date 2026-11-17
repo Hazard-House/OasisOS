@@ -64,7 +64,7 @@ export function describeSupabaseFallbackReason(
         ? `dependency analysis failed: ${reason.detail.replace(/\.+$/, "")}`
         : "dependency analysis failed";
     case "changed_shared_paths_missing":
-      return "Dyad couldn't tell which shared modules changed";
+      return "OasisOS couldn't tell which shared modules changed";
     case "typescript_not_installed":
       return "TypeScript isn't installed in the app, and dependency analysis needs it";
     case "relative_import_outside_supabase_functions":
@@ -92,7 +92,7 @@ export function describeSupabaseFallbackReason(
     case "changed_shared_directory":
       return `the changed shared path ${file} is a directory`;
     case "unable_to_enumerate_functions":
-      return "Dyad couldn't list the functions in supabase/functions";
+      return "OasisOS couldn't list the functions in supabase/functions";
   }
 }
 

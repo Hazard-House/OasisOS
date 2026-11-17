@@ -637,7 +637,7 @@ describe("choosing a Worker", () => {
     );
   });
 
-  it("tells a Neon app what Dyad will put on the Worker, for the branch it deploys", async () => {
+  it("tells a Neon app what OasisOS will put on the Worker, for the branch it deploys", async () => {
     loadedApp.value = {
       neonProjectId: "neon-1",
       selectedDatabaseBranchType: "development",

@@ -293,7 +293,7 @@ export async function prepareIsolatedTestDatabase({
           `Failed to restore .env.local for app ${app.id}: ${error}`,
         );
         emit(
-          "Warning: Dyad couldn't restore your real database settings, so the temporary Neon branch was kept tracked for retry. Restore .env.local before running more tests.\n",
+          "Warning: OasisOS couldn't restore your real database settings, so the temporary Neon branch was kept tracked for retry. Restore .env.local before running more tests.\n",
           "setup",
         );
       }
@@ -1006,7 +1006,7 @@ function buildRlsWarning(rls: {
   unverified?: boolean;
 }): string | undefined {
   if (rls.unverified) {
-    return "Dyad couldn't check whether your Supabase data is protected. Tests may be able to access existing data. Check your Supabase connection and data access rules.";
+    return "OasisOS couldn't check whether your Supabase data is protected. Tests may be able to access existing data. Check your Supabase connection and data access rules.";
   }
   if (rls.tablesWithoutRls.length === 0) {
     return undefined;

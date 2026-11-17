@@ -1475,7 +1475,7 @@ describe("useTestRecorder", () => {
       onEnded({
         appId: 1,
         reason: "error",
-        message: "Dyad couldn't restore your app's real database settings",
+        message: "OasisOS couldn't restore your app's real database settings",
       });
       return { ok: true };
     });

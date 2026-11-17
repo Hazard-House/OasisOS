@@ -324,7 +324,7 @@ Harness-only additions (configurable, on by default):
   `require` + `ts-node/register`) load fine in-process under vitest — the
   `local_agent_*` and `context_compaction` integration tests exercise them,
   including through the engine anthropic route.
-- **Dyad Pro / engine routing**: pass `engine: true` to point
+- **OasisOS Pro / engine routing**: pass `engine: true` to point
   `DYAD_ENGINE_URL` / `DYAD_GATEWAY_URL` at the harness fake server. Model-client
   and LM Studio URL reads happen at call time, so tests no longer need a hoisted
   relay just to know the fake server's ephemeral port.
@@ -334,7 +334,7 @@ Harness-only additions (configurable, on by default):
 - `chat:stream` resolves `undefined` (not the chatId) for ask/plan/local-agent
   turns; assert success via absence of `chat:response:error` + db rows.
   `chat:cancel` is a typed handler and returns an IPC envelope `{ ok, value }`.
-- Harness-created chats have `chatMode: null`; with Dyad Pro enabled,
+- Harness-created chats have `chatMode: null`; with OasisOS Pro enabled,
   `resolveChatModeForTurn` defaults a null stored mode to the local-agent mode.
   Pro build-mode tests must pass `requestedChatMode: "build"` on every
   `streamChat`.

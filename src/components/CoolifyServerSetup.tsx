@@ -265,9 +265,9 @@ export function CoolifyServerSetup({
           >
             <p className="font-medium">This server is not encrypted</p>
             <p className="text-muted-foreground">
-              {result.insecureReason} Dyad will still work, but its access token
-              crosses your network unencrypted every time it deploys. Adding a
-              domain that points at this server fixes it.
+              {result.insecureReason} OasisOS will still work, but its access
+              token crosses your network unencrypted every time it deploys.
+              Adding a domain that points at this server fixes it.
             </p>
             {/* A decision rather than a notice, and only where there is one to
                 make: a token was created, and keeping it is what puts it on
@@ -480,8 +480,8 @@ export function CoolifyServerSetup({
           </p>
         )}
         <p className="mt-1 text-xs text-muted-foreground">
-          Point it at this server first. Leave blank and Dyad will set up HTTPS
-          using the server&apos;s address.
+          Point it at this server first. Leave blank and OasisOS will set up
+          HTTPS using the server&apos;s address.
         </p>
       </div>
 

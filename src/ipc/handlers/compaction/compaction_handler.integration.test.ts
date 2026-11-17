@@ -329,7 +329,7 @@ describe("performCompaction", () => {
     );
   });
 
-  it("pins the benchmarked compaction model for Dyad Pro users", async () => {
+  it("pins the benchmarked compaction model for OasisOS Pro users", async () => {
     settingsState.current = {
       selectedModel: { provider: "anthropic", name: "test-model" },
       enableDyadPro: true,

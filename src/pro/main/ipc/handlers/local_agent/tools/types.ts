@@ -174,8 +174,8 @@ export interface AgentContext {
   /** Whether the last completed pre-commit run passed. */
   preCommitLastRunPassed?: boolean;
   /**
-   * If true, the user has Dyad Pro enabled.
-   * Engine-dependent tools require this to access the Dyad Pro API.
+   * If true, the user has OasisOS Pro enabled.
+   * Engine-dependent tools require this to access the OasisOS Pro API.
    */
   isDyadPro: boolean;
   /** The durable child thread currently executing this tool, if any. */
@@ -212,7 +212,7 @@ export interface AgentContext {
   /** Whether run_type_checks accepts no paths and reports the whole project. */
   runTypeScriptForWholeProject?: boolean;
   /**
-   * If true, this turn is using a Dyad Free model. Some Pro-enabled
+   * If true, this turn is using a OasisOS Free model. Some Pro-enabled
    * conveniences, such as MCP auto-approval, should stay disabled.
    */
   freeModelMode?: boolean;
