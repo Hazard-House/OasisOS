@@ -14,8 +14,7 @@ export function OasisLogo({ className }: { className?: string }) {
       />
       <img
         src={yellowMark}
-        alt=""
-        aria-hidden
+        alt="OasisOS"
         className="hidden h-full w-full object-contain dark:block"
       />
     </span>
