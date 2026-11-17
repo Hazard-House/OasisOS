@@ -181,8 +181,7 @@ export function HelpBotDialog({ isOpen, onClose }: HelpBotDialogProps) {
                   {t("help.askQuestion")}
                 </div>
                 <div className="text-xs text-muted-foreground/70 bg-muted/50 rounded-md p-3">
-                  This conversation may be logged and used to improve the
-                  product. Please do not put any sensitive information in here.
+                  {t("help.conversationLogged")}
                 </div>
               </div>
             ) : (
@@ -220,7 +219,7 @@ export function HelpBotDialog({ isOpen, onClose }: HelpBotDialogProps) {
               className="flex-1 h-10 rounded-md border bg-background px-3 text-sm"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Type your question..."
+              placeholder={t("help.typeQuestion")}
               onKeyDown={(e) => {
                 if (e.key === "Enter" && !e.shiftKey) {
                   e.preventDefault();
@@ -229,7 +228,7 @@ export function HelpBotDialog({ isOpen, onClose }: HelpBotDialogProps) {
               }}
             />
             <Button onClick={handleSend} disabled={streaming || !input.trim()}>
-              {streaming ? "Sending..." : "Send"}
+              {streaming ? t("help.sending") : t("help.send")}
             </Button>
           </div>
         </div>

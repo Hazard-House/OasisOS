@@ -12,15 +12,6 @@ function oasisWebHtml() {
   return {
     name: "oasis-web-html",
     enforce: "post" as const,
-    transformIndexHtml(html: string) {
-      if (html.includes("/ipc-bootstrap.js")) return html;
-      return html.replace(
-        "<head>",
-        `<head>
-    <script src="/ipc-bootstrap.js"></script>
-    <link rel="icon" href="/favicon.png" />`,
-      );
-    },
     closeBundle() {
       const nested = path.resolve(root, "dist/web/web/index.html");
       const flat = path.resolve(root, "dist/web/index.html");
