@@ -378,7 +378,7 @@ function renderFinalReport({
 function assertDyadValueAvailable(settings: UserSettings): void {
   if (!settings.enableDyadPro || !settings.providerSettings?.auto?.apiKey) {
     throw new DyadError(
-      "explore_code sub-agent requires Dyad Pro with an auto provider API key",
+      "explore_code sub-agent requires OasisOS Pro with an auto provider API key",
       DyadErrorKind.Precondition,
     );
   }

@@ -209,7 +209,7 @@ describe("banner detail on the wire", () => {
           banner: {
             kind: "warning",
             completedOperation: "push",
-            message: "You're working on main, but Dyad syncs other2.",
+            message: "You're working on main, but OasisOS syncs other2.",
             detail:
               "other2 was already up to date. 5 commits on main are not on GitHub's other2.",
           },

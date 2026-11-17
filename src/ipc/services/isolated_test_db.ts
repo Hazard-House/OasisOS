@@ -293,7 +293,7 @@ export async function prepareIsolatedTestDatabase({
           `Failed to restore .env.local for app ${app.id}: ${error}`,
         );
         emit(
-          "Warning: Dyad couldn't restore your real database settings, so the temporary Neon branch was kept tracked for retry. Restore .env.local before running more tests.\n",
+          "Warning: OasisOS couldn't restore your real database settings, so the temporary Neon branch was kept tracked for retry. Restore .env.local before running more tests.\n",
           "setup",
         );
       }
@@ -305,7 +305,7 @@ export async function prepareIsolatedTestDatabase({
             `Failed to restart app ${app.id} back onto its real branch: ${error}`,
           );
           emit(
-            "Warning: Dyad restored your real database settings, but couldn't restart the preview. Restart the app manually before continuing.\n",
+            "Warning: OasisOS restored your real database settings, but couldn't restart the preview. Restart the app manually before continuing.\n",
             "setup",
           );
         }
@@ -939,7 +939,7 @@ async function prepareSupabaseTestUserIsolation({
                 if (!(error instanceof SupabaseTestUserCreationRejectedError))
                   throw error;
                 emit(
-                  "Warning: Supabase rejected default test-user creation with a database error (often caused by a signup trigger). Dyad verified that no user was created. Continuing without default sign-in credentials so test fixtures can create and clean up their own users and required records.\n",
+                  "Warning: Supabase rejected default test-user creation with a database error (often caused by a signup trigger). OasisOS verified that no user was created. Continuing without default sign-in credentials so test fixtures can create and clean up their own users and required records.\n",
                   "running",
                 );
                 return {};
@@ -1006,7 +1006,7 @@ function buildRlsWarning(rls: {
   unverified?: boolean;
 }): string | undefined {
   if (rls.unverified) {
-    return "Dyad couldn't check whether your Supabase data is protected. Tests may be able to access existing data. Check your Supabase connection and data access rules.";
+    return "OasisOS couldn't check whether your Supabase data is protected. Tests may be able to access existing data. Check your Supabase connection and data access rules.";
   }
   if (rls.tablesWithoutRls.length === 0) {
     return undefined;

@@ -259,7 +259,7 @@ export async function createTempTestBranch(
     // catches the case where it did not, or could not.
     if (cleanupOnly && !isTestBranchCleanupOnly(appData.neonTestBranchId)) {
       throw new DyadError(
-        `App ${appData.id} still has real database settings pointing at a previous session's temporary Neon branch. Dyad will restore them on the next launch; skipping this run so that recovery isn't lost.`,
+        `App ${appData.id} still has real database settings pointing at a previous session's temporary Neon branch. OasisOS will restore them on the next launch; skipping this run so that recovery isn't lost.`,
         DyadErrorKind.Precondition,
       );
     }
@@ -519,7 +519,7 @@ export async function markAndDeleteTempTestBranch(
   }
   try {
     // Still best-effort — never throws — but the verdict is reported now.
-    // Callers that promise the user "Dyad will retry remote cleanup on next
+    // Callers that promise the user "OasisOS will retry remote cleanup on next
     // startup" need to know whether the branch actually leaked.
     return await deleteTempTestBranch(cleanupApp);
   } catch (error) {

@@ -1336,7 +1336,7 @@ describe("push summaries", () => {
     });
     expect(idle.banner).toMatchObject({
       kind: "warning",
-      message: "You're working on main, but Dyad syncs other2.",
+      message: "You're working on main, but OasisOS syncs other2.",
       detail:
         "other2 was already up to date. 5 commits on main are not on GitHub's other2.",
     });
@@ -1355,7 +1355,7 @@ describe("push summaries", () => {
         remoteTip: "c872cc3",
       }).banner?.detail,
     ).toBe(
-      "Dyad pushed 2 commits to other2. 5 commits on main are not on GitHub's other2.",
+      "OasisOS pushed 2 commits to other2. 5 commits on main are not on GitHub's other2.",
     );
   });
 
@@ -1380,7 +1380,9 @@ describe("push summaries", () => {
         commitsNotOnRemote: 1,
         remoteTip: "c872cc3",
       }).banner?.detail,
-    ).toBe("Dyad pushed 1 commit to main. 1 commit is not on GitHub's main.");
+    ).toBe(
+      "OasisOS pushed 1 commit to main. 1 commit is not on GitHub's main.",
+    );
   });
 
   it("falls back to the two commits when nothing else explains the gap", () => {

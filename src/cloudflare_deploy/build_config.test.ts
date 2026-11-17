@@ -34,7 +34,7 @@ describe("buildCloudflareTokenTemplateUrl", () => {
     });
     expect(url.searchParams.get("accountId")).toBe("*");
     expect(url.searchParams.get("zoneId")).toBe("all");
-    expect(url.searchParams.get("name")).toBe("Dyad");
+    expect(url.searchParams.get("name")).toBe("OasisOS");
   });
 });
 

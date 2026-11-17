@@ -34,7 +34,7 @@ const PROVIDER_DISPLAY_NAMES: Record<ProviderApiKeyValidationProvider, string> =
   {
     google: "Google",
     openrouter: "OpenRouter",
-    auto: "Dyad",
+    auto: "OasisOS",
   };
 
 export async function validateProviderApiKey({

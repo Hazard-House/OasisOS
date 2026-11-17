@@ -92,7 +92,7 @@ export const DebugSettingsSchema = z.object({
   defaultChatMode: z.string().nullable(),
   /** Whether changes are auto-approved without review */
   autoApproveChanges: z.boolean().nullable(),
-  /** Whether Dyad Pro is enabled */
+  /** Whether OasisOS Pro is enabled */
   enableDyadPro: z.boolean().nullable(),
   /** Model-specific effort level */
   effortLevel: z.string(),

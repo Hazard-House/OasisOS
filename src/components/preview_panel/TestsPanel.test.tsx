@@ -898,7 +898,7 @@ describe("TestsPanel", () => {
       ).disabled,
     ).toBe(true);
     expect(screen.queryByText("Start the app to run tests.")).toBeNull();
-    expect(screen.queryByText(/Dyad won't run Neon tests/)).toBeNull();
+    expect(screen.queryByText(/OasisOS won't run Neon tests/)).toBeNull();
     expect(screen.queryByText(/couldn't load your settings/)).toBeNull();
     expect(screen.getByRole("status").textContent).toContain(
       "Loading settings",
@@ -1026,7 +1026,7 @@ describe("TestsPanel", () => {
       renderPanel();
 
       await screen.findByText("signup.spec.ts");
-      expect(screen.queryByText(/Dyad won't run Neon tests/)).toBeNull();
+      expect(screen.queryByText(/OasisOS won't run Neon tests/)).toBeNull();
       expect(
         (
           screen.getByRole("button", {
@@ -1044,7 +1044,7 @@ describe("TestsPanel", () => {
       renderPanel();
 
       await screen.findByText("signup.spec.ts");
-      expect(screen.queryByText(/Dyad won't run Neon tests/)).toBeNull();
+      expect(screen.queryByText(/OasisOS won't run Neon tests/)).toBeNull();
       expect(
         (
           screen.getByRole("button", {

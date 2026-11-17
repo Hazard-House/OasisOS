@@ -1140,14 +1140,14 @@ describe("runExploreCodeSubagent", () => {
     );
   });
 
-  it("fails clearly when Dyad Pro is unavailable", async () => {
+  it("fails clearly when OasisOS Pro is unavailable", async () => {
     mocks.readSettings.mockReturnValue({ enableDyadPro: false });
     await expect(
       runExploreCodeSubagent({
         args: { query: "widget save flow", intent: "locate" },
         ctx: createMockContext(),
       }),
-    ).rejects.toThrow(/Dyad Pro/);
+    ).rejects.toThrow(/OasisOS Pro/);
   });
 
   it("keeps benchmark-derived domain literals out of production explorer code", async () => {

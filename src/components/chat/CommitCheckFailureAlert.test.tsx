@@ -19,7 +19,7 @@ vi.mock("react-i18next", () => ({
         "preview.viewPreCommitOutput": "View check output",
         "preview.fixWithAi": "Fix with AI",
         "preview.fixWithAiDescription":
-          "Dyad will try to fix the reported issues.",
+          "OasisOS will try to fix the reported issues.",
         "preview.startingAiFix": "Opening chat...",
         "preview.checkingAiFixAvailability":
           "Checking whether Dyad can fix this...",
@@ -67,7 +67,7 @@ describe("CommitCheckFailureAlert", () => {
     expect(alert).toContain(
       "Your changes were not committed. Fix the reported issues and commit again.",
     );
-    expect(alert).toContain("Dyad will try to fix the reported issues.");
+    expect(alert).toContain("OasisOS will try to fix the reported issues.");
   });
 
   it("disables the action while chat is opening", () => {

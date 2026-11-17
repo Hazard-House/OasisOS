@@ -586,7 +586,7 @@ async function caseRequest(phase: "before" | "after", id: string) {
     headers: { Authorization: \`Bearer \${caseToken}\` },
     signal: AbortSignal.timeout(${TEST_CASE_REQUEST_TIMEOUT_MS}),
   });
-  if (!response.ok) throw new Error("Dyad couldn't prepare or clean up isolated test data.");
+  if (!response.ok) throw new Error("OasisOS couldn't prepare or clean up isolated test data.");
   return await response.json() as Record<string, string>;
 }
 

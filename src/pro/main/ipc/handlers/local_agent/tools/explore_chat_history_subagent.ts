@@ -210,13 +210,13 @@ function assertHistoryExplorerAvailable(
   // Toolset exclusion is not an execution-time security boundary — re-check.
   if (!ctx.isDyadPro || !settings.enableDyadPro) {
     throw new DyadError(
-      "explore_chat_history requires Dyad Pro",
+      "explore_chat_history requires OasisOS Pro",
       DyadErrorKind.Precondition,
     );
   }
   if (!settings.providerSettings?.auto?.apiKey) {
     throw new DyadError(
-      "explore_chat_history requires a Dyad Pro auto provider API key",
+      "explore_chat_history requires an OasisOS Pro auto provider API key",
       DyadErrorKind.Precondition,
     );
   }

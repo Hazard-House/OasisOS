@@ -646,7 +646,7 @@ describe("markAndDeleteTempTestBranch", () => {
   });
 
   it("reports the failure without throwing when the remote delete fails", async () => {
-    // Callers promise the user "Dyad will retry remote cleanup on next
+    // Callers promise the user "OasisOS will retry remote cleanup on next
     // startup", so they need the verdict — but a teardown must never throw.
     mocks.deleteProjectBranch.mockRejectedValueOnce({
       response: { status: 500 },

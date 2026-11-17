@@ -442,13 +442,13 @@ function getDyadEngineApiKey(apiKey: string | undefined): string {
   const loadedApiKey = loadApiKey({
     apiKey,
     environmentVariableName: "DYAD_PRO_API_KEY",
-    description: "Dyad Pro API key",
+    description: "OasisOS Pro API key",
   });
   const normalizedApiKey = normalizeProviderApiKeyInput(loadedApiKey);
   const invalidCharacter = findInvalidProviderApiKeyCharacter(normalizedApiKey);
   if (invalidCharacter) {
     throw new DyadError(
-      formatInvalidProviderApiKeyMessage("Dyad", invalidCharacter),
+      formatInvalidProviderApiKeyMessage("OasisOS", invalidCharacter),
       DyadErrorKind.Validation,
     );
   }

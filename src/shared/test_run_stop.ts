@@ -14,14 +14,14 @@ const STOP_CAUSES: Record<CancellationCause, string> = {
   "version-restored": "because an earlier version of the app was restored",
   "subagent-stopped": "because the sub-agent that started it was stopped",
   "pro-revoked":
-    "because Dyad Pro is no longer active, which stopped the sub-agent that started it",
+    "because OasisOS Pro is no longer active, which stopped the sub-agent that started it",
   "claude-code-call-abandoned":
     "because Claude Code stopped waiting for the run_tests call",
   "claude-code-session-ended":
     "because the Claude Code session ended before the tests finished",
   "agent-cancelled": "because the agent turn that started it was cancelled",
   "app-deleted": "because the app is being deleted",
-  "app-quit": "because Dyad is quitting",
+  "app-quit": "because OasisOS is quitting",
 };
 
 /**

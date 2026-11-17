@@ -44,6 +44,8 @@ export function ChatErrorBox({
   const isFreeModelQuotaError =
     normalizedError.includes("dyad_free_model_quota_exceeded") ||
     normalizedError.includes("FREE_MODEL_QUOTA_EXCEEDED") ||
+    normalizedError.includes("OasisOS Free has reached its daily limit.") ||
+    normalizedError.includes("OasisOS Free limit") ||
     normalizedError.includes("Dyad Free has reached its daily limit.") ||
     normalizedError.includes("Dyad Free limit");
   const { messagesLimit, resetTime } = useFreeAgentQuota();
@@ -82,7 +84,7 @@ export function ChatErrorBox({
             href="https://dyad.sh/pro?utm_source=dyad-app&utm_medium=app&utm_campaign=free-quota-error"
             variant="primary"
           >
-            Access with Dyad Pro
+            Access with OasisOS Pro
           </ExternalLink>
         </span>{" "}
         or switch to another model.
@@ -93,9 +95,9 @@ export function ChatErrorBox({
   // Important, this needs to come after the "free quota tier" check
   // because it also includes this URL in the error message
   //
-  // Sometimes Dyad Pro can return rate limit errors and we do not want to
-  // show the upgrade to Dyad Pro link in that case because they are
-  // already on the Dyad Pro plan.
+  // Sometimes OasisOS Pro can return rate limit errors and we do not want to
+  // show the upgrade to OasisOS Pro link in that case because they are
+  // already on the OasisOS Pro plan.
   if (
     !isDyadProEnabled &&
     (error.includes("Resource has been exhausted") ||
@@ -110,7 +112,7 @@ export function ChatErrorBox({
             href="https://dyad.sh/pro?utm_source=dyad-app&utm_medium=app&utm_campaign=rate-limit-error"
             variant="primary"
           >
-            Upgrade to Dyad Pro
+            Upgrade to OasisOS Pro
           </ExternalLink>
 
           <ExternalLink href="https://dyad.sh/docs/help/ai-rate-limit">
@@ -158,17 +160,17 @@ export function ChatErrorBox({
     return (
       <ChatErrorContainer onDismiss={onDismiss}>
         You have used all {messagesLimit} free Basic Agent messages for today.
-        {resetText} This message was not sent. Upgrade to Dyad Pro for unlimited
-        Agent access
+        {resetText} This message was not sent. Upgrade to OasisOS Pro for
+        unlimited Agent access
         {onSwitchToBuildMode
           ? ", or switch this chat to Build mode and send it again."
-          : ". To use Build mode, first choose a model other than Dyad Free, then send it again."}
+          : ". To use Build mode, first choose a model other than OasisOS Free, then send it again."}
         <div className="mt-2 flex flex-wrap gap-2">
           <ExternalLink
             href="https://dyad.sh/pro?utm_source=dyad-app&utm_medium=app&utm_campaign=free-agent-quota-exceeded"
             variant="primary"
           >
-            Upgrade to Dyad Pro
+            Upgrade to OasisOS Pro
           </ExternalLink>
           {onSwitchToBuildMode && (
             <Button
@@ -199,8 +201,8 @@ export function ChatErrorBox({
     return (
       <ChatErrorContainer onDismiss={onDismiss}>
         <span>
-          You have reached the {freeModelMessagesLimit}-message Dyad Free model
-          limit.
+          You have reached the {freeModelMessagesLimit}-message OasisOS Free
+          model limit.
           {resetText} Switch to paid models.{" "}
           <ExternalLink
             href="https://academy.dyad.sh/subscription?utm_source=dyad-app&utm_medium=app&utm_campaign=exceeded-budget-error"
@@ -226,7 +228,7 @@ export function ChatErrorBox({
               href="https://dyad.sh/pro?utm_source=dyad-app&utm_medium=app&utm_campaign=general-error"
               variant="primary"
             >
-              Upgrade to Dyad Pro
+              Upgrade to OasisOS Pro
             </ExternalLink>
           )}
         {isDyadProEnabled && onStartNewChat && (

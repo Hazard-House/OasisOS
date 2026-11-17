@@ -584,7 +584,7 @@ describe("buildMcpCapabilityMap", () => {
     expect(execute).toHaveBeenCalledOnce();
   });
 
-  it("does not pass an auto-approve callback during Dyad Free turns", async () => {
+  it("does not pass an auto-approve callback during OasisOS Free turns", async () => {
     vi.mocked(requireMcpToolConsent).mockResolvedValue({ approved: false });
 
     const ctx = createCtx();

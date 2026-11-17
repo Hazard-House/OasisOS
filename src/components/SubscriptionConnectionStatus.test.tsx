@@ -65,17 +65,19 @@ it.each(["loading", "free", "pro"])(
       screen.getByText("Your ChatGPT subscription is connected."),
     ).toBeVisible();
     if (state === "loading") {
-      expect(screen.getByText("Checking Dyad Pro status…")).toBeVisible();
+      expect(screen.getByText("Checking OasisOS Pro status…")).toBeVisible();
     } else {
       expect(
-        screen.queryByText("Checking Dyad Pro status…"),
+        screen.queryByText("Checking OasisOS Pro status…"),
       ).not.toBeInTheDocument();
     }
     if (state === "pro") {
-      expect(screen.getByText(/Uses up to 1.5 Dyad Pro credits/)).toBeVisible();
+      expect(
+        screen.getByText(/Uses up to 1.5 OasisOS Pro credits/),
+      ).toBeVisible();
     } else {
       expect(
-        screen.queryByText(/Uses up to 1.5 Dyad Pro credits/),
+        screen.queryByText(/Uses up to 1.5 OasisOS Pro credits/),
       ).not.toBeInTheDocument();
     }
     expect(

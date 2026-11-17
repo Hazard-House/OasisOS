@@ -1948,7 +1948,7 @@ async function preflightPersonaModel(
   );
   if (!available) {
     throw new DyadError(
-      `${persona} requires ${defaults.name}, which is not currently available. Check your Dyad Pro model access and try again.`,
+      `${persona} requires ${defaults.name}, which is not currently available. Check your OasisOS Pro model access and try again.`,
       DyadErrorKind.Precondition,
     );
   }
@@ -2336,8 +2336,8 @@ function assertPro(persona?: SubagentPersona): void {
   if (!isDyadProEnabled(readSettings())) {
     throw new DyadError(
       persona
-        ? `${persona} sub-agents require Dyad Pro.`
-        : "Sub-agents require Dyad Pro.",
+        ? `${persona} sub-agents require OasisOS Pro.`
+        : "Sub-agents require OasisOS Pro.",
       DyadErrorKind.Auth,
     );
   }
@@ -2714,7 +2714,7 @@ function watchEntitlement(
       threadId,
       "entitlement_revoked",
       null,
-      "Dyad Pro entitlement was revoked while this sub-agent was running.",
+      "OasisOS Pro entitlement was revoked while this sub-agent was running.",
     ).catch((error) =>
       logger.error(
         `Failed to persist entitlement revocation for ${threadId}`,

@@ -41,13 +41,13 @@ const DESCRIPTIONS: Record<CancellationCause, string> = {
   "chat-deleted": "The chat was deleted",
   "version-restored": "An earlier version of the app was restored",
   "subagent-stopped": "The sub-agent was stopped",
-  "pro-revoked": "Dyad Pro is no longer active",
+  "pro-revoked": "OasisOS Pro is no longer active",
   "claude-code-call-abandoned":
     "Claude Code stopped waiting for this tool call",
   "claude-code-session-ended": "The Claude Code session ended",
   "agent-cancelled": "The agent turn was cancelled",
   "app-deleted": "The app is being deleted",
-  "app-quit": "Dyad is quitting",
+  "app-quit": "OasisOS is quitting",
 };
 
 export class CancellationReason extends DOMException {

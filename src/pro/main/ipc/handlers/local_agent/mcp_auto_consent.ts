@@ -58,7 +58,7 @@ export async function classifyMcpToolConsent(
 }
 
 // Builds the auto-approve callback for requireMcpToolConsent, or undefined when
-// the feature is off or the turn is running in Dyad Free mode. Shared by both
+// the feature is off or the turn is running in OasisOS Free mode. Shared by both
 // agent MCP paths (sandbox host functions and directly-registered tools) so
 // auto-approval behaves the same regardless of how the tool is plumbed.
 export function buildMcpAutoApprove(params: {

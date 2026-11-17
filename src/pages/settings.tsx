@@ -55,6 +55,7 @@ import { activeSettingsSectionAtom } from "@/atoms/viewAtoms";
 import { SECTION_IDS, SETTING_IDS } from "@/lib/settingsSearchIndex";
 import { SubagentSettings } from "@/components/settings/SubagentSettings";
 import { RunTypeScriptForWholeProjectSwitch } from "@/components/RunTypeScriptForWholeProjectSwitch";
+import { OasisLogo } from "@/components/OasisLogo";
 
 const hint = "text-[13px] leading-relaxed text-muted-foreground";
 
@@ -142,6 +143,25 @@ export default function SettingsPage() {
           </p>
         </header>
 
+        <section
+          id="about"
+          className="mb-8 flex items-center gap-4 rounded-xl border border-border/70 bg-card p-4"
+        >
+          <OasisLogo className="h-14 w-14" />
+          <div>
+            <h2 className="text-lg font-semibold tracking-tight text-foreground">
+              About OasisOS
+            </h2>
+            <p className={cn("mt-1", hint)}>
+              OasisOS is a local app builder. Based on Dyad.
+            </p>
+            <p className="mt-2 text-[13px] text-muted-foreground">
+              <span className="font-medium text-foreground">Version</span>{" "}
+              <span className="font-mono">{appVersion ? appVersion : "-"}</span>
+            </p>
+          </div>
+        </section>
+
         <div>
           <GeneralSettings appVersion={appVersion} />
           <WorkflowSettings />
@@ -150,7 +170,7 @@ export default function SettingsPage() {
           <SettingsSection
             id={SECTION_IDS.providers}
             title="Model Providers"
-            description="Connect the AI providers Dyad uses to build and run your apps."
+            description="Connect the AI providers OasisOS uses to build and run your apps."
           >
             <ProviderSettingsGrid />
           </SettingsSection>
@@ -158,7 +178,7 @@ export default function SettingsPage() {
           <SettingsSection
             id={SECTION_IDS.telemetry}
             title="Telemetry"
-            description="Anonymous usage data that helps improve Dyad."
+            description="Anonymous usage data that helps improve OasisOS."
           >
             <div id={SETTING_IDS.telemetry} className="space-y-1.5">
               <TelemetrySwitch />
@@ -178,7 +198,7 @@ export default function SettingsPage() {
           <SettingsSection
             id={SECTION_IDS.integrations}
             title="Integrations"
-            description="Link Dyad to the services you deploy and store data with."
+            description="Link OasisOS to the services you deploy and store data with."
           >
             <div id={SETTING_IDS.github}>
               <GitHubIntegration />
@@ -450,7 +470,7 @@ export function GeneralSettings({ appVersion }: { appVersion: string | null }) {
     <SettingsSection
       id={SECTION_IDS.general}
       title="General"
-      description="Appearance, language, and how Dyad runs on your machine."
+      description="Appearance, language, and how OasisOS runs on your machine."
     >
       <div id={SETTING_IDS.theme} className="flex items-center gap-4">
         <label className="text-sm font-medium text-foreground">Theme</label>
@@ -519,7 +539,7 @@ export function WorkflowSettings() {
     <SettingsSection
       id={SECTION_IDS.workflow}
       title="Workflow"
-      description="How Dyad handles code changes, previews, and notifications."
+      description="How OasisOS handles code changes, previews, and notifications."
     >
       <div id={SETTING_IDS.defaultChatMode}>
         <DefaultChatModeSelector />

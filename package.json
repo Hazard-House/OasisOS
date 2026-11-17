@@ -1,7 +1,7 @@
 {
   "name": "dyad",
   "version": "1.24.0-beta.1",
-  "description": "Free, local, open-source AI app builder",
+  "description": "OasisOS is a local AI app builder. Based on Dyad.",
   "keywords": [],
   "license": "MIT",
   "author": {
@@ -46,12 +46,14 @@
     "fmt": "npx oxfmt",
     "presubmit": "npm run fmt:check && npm run lint",
     "eval": "cross-env NODE_OPTIONS=--no-deprecation vitest run --config vitest.eval.config.ts",
-    "test": "node --test scripts/pnpm-install-retry.test.mjs scripts/prepare-safe-storage-baseline.test.mjs scripts/promote-previous-beta.test.mjs scripts/start-supervisor.test.mjs scripts/copy-data-to-dev.test.mjs scripts/unauthorized-release-alert.test.mjs scripts/pr-review/validate-review.test.mjs scripts/pr-review/authorize-review-comment.test.mjs scripts/pr-review/review-tool-guard.test.mjs scripts/issue-triage/triage-comment.test.mjs scripts/issue-triage/prepare-context.test.mjs && cross-env NODE_OPTIONS=--no-deprecation VITE_CJS_IGNORE_WARNING=true vitest run",
+    "test": "node --test server/web-server.test.mjs scripts/pnpm-install-retry.test.mjs scripts/prepare-safe-storage-baseline.test.mjs scripts/promote-previous-beta.test.mjs scripts/start-supervisor.test.mjs scripts/copy-data-to-dev.test.mjs scripts/unauthorized-release-alert.test.mjs scripts/pr-review/validate-review.test.mjs scripts/pr-review/authorize-review-comment.test.mjs scripts/pr-review/review-tool-guard.test.mjs scripts/issue-triage/triage-comment.test.mjs scripts/issue-triage/prepare-context.test.mjs && cross-env NODE_OPTIONS=--no-deprecation VITE_CJS_IGNORE_WARNING=true vitest run",
     "test:watch": "cross-env NODE_OPTIONS=--no-deprecation VITE_CJS_IGNORE_WARNING=true vitest",
     "test:ui": "cross-env NODE_OPTIONS=--no-deprecation VITE_CJS_IGNORE_WARNING=true vitest --ui",
     "extract-codebase": "ts-node scripts/extract-codebase.ts",
     "init-precommit": "husky",
     "build": "npm run pre:e2e",
+    "build:web": "vite build --config vite.web.config.mts",
+    "start:web": "node server/web-server.mjs",
     "pre:e2e": "cross-env E2E_TEST_BUILD=true npm run package",
     "e2e": "playwright test",
     "e2e:fast": "PLAYWRIGHT_RETRIES=1 playwright test",
@@ -78,6 +80,7 @@
     "@base-ui/react": "^1.2.0",
     "@biomejs/biome": "^1.9.4",
     "@dyad-sh/supabase-management-js": "v1.0.1",
+    "@fontsource/inter": "^5.3.0",
     "@lexical/react": "^0.33.1",
     "@modelcontextprotocol/sdk": "^1.17.5",
     "@monaco-editor/react": "^4.7.0-rc.0",
@@ -130,6 +133,7 @@
     "lucide-react": "^0.487.0",
     "monaco-editor": "^0.52.2",
     "mustardscript": "^0.3.1",
+    "next": "^15.5.29",
     "node-pty": "^1.1.0",
     "perfect-freehand": "^1.2.2",
     "pg-schema-classifier": "file:packages/pg-schema-classifier",
@@ -157,8 +161,8 @@
     "update-electron-app": "^3.1.2",
     "use-sync-external-store": "^1.6.0",
     "uuid": "^11.1.0",
-    "yaml": "^2.8.1",
     "ws": "^8.19.0",
+    "yaml": "^2.8.1",
     "zod": "^4.3.6"
   },
   "optionalDependencies": {
@@ -219,5 +223,5 @@
   "engines": {
     "node": ">=24 <26"
   },
-  "productName": "dyad"
+  "productName": "OasisOS"
 }

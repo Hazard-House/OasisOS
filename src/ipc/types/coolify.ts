@@ -94,7 +94,7 @@ export const CoolifyStatusSchema = z.object({
   /**
    * The address of a server Dyad set up and holds an admin account for, or
    * null. Not a secret, and the panel needs it without the password: while
-   * this is set the only Coolify Dyad will connect to is this one, so it
+   * this is set the only Coolify OasisOS will connect to is this one, so it
    * pins the address field and stands in the way of setting up another.
    */
   serverUrl: z.string().nullable(),

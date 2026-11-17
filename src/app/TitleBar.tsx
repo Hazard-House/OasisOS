@@ -7,8 +7,7 @@ import { useRouter } from "@tanstack/react-router";
 import { useSettings } from "@/hooks/useSettings";
 import { Button } from "@/components/ui/button";
 import { AppAvatar } from "@/components/AppAvatar";
-// @ts-ignore
-import logo from "../../assets/logo.svg";
+import { OasisLogo } from "@/components/OasisLogo";
 import { providerSettingsRoute } from "@/routes/settings/providers/$provider";
 import { cn } from "@/lib/utils";
 import { useDeepLink } from "@/contexts/DeepLinkContext";
@@ -52,7 +51,7 @@ export const TitleBar = () => {
     const handleDeepLink = async () => {
       if (lastDeepLink?.type === "dyad-pro-return") {
         await refreshSettings();
-        // Refetch user budget when Dyad Pro key is set via deep link
+        // Refetch user budget when OasisOS Pro key is set via deep link
         queryClient.invalidateQueries({ queryKey: queryKeys.userBudget.info });
         if (hasArmedPayload) {
           const refreshedSettings = queryClient.getQueryData<UserSettings>(
@@ -99,7 +98,7 @@ export const TitleBar = () => {
         <div className="flex items-center shrink-0">
           <div className={`${showWindowControls ? "pl-2" : "pl-18"}`}></div>
 
-          <img src={logo} alt="Dyad" className="ml-2 w-5 h-5 shrink-0" />
+          <OasisLogo className="ml-2 h-5 w-5" />
 
           <Tooltip>
             <TooltipTrigger

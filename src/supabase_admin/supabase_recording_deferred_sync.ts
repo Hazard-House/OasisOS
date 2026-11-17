@@ -35,7 +35,7 @@ const pendingByApp = new Map<number, PendingSync>();
 export class SupabaseFunctionSyncDeferredError extends DyadError {
   constructor() {
     super(
-      "A recording session is active, so Dyad will deploy this Supabase function change after the recording ends.",
+      "A recording session is active, so OasisOS will deploy this Supabase function change after the recording ends.",
       DyadErrorKind.Precondition,
     );
     this.name = "SupabaseFunctionSyncDeferredError";
@@ -197,7 +197,7 @@ async function reportDeferredSyncFailure(
     });
     if (!target) return;
     windowRegistry.endpointForSession(target)?.send("toast:error", {
-      message: `Dyad couldn't deploy the Supabase function changes made during the recording: ${detail}. Use "Redeploy edge functions" in the Supabase panel to sync them.`,
+      message: `OasisOS couldn't deploy the Supabase function changes made during the recording: ${detail}. Use "Redeploy edge functions" in the Supabase panel to sync them.`,
       persist: true,
       toastId: `supabase-deferred-sync-${appId}`,
     });

@@ -53,7 +53,7 @@ function createCallerCancellationError(cause: unknown): DyadError {
  * @param endpoint - The API endpoint path (e.g., "/tools/web-search")
  * @param options - Fetch options (method, body, additional headers, etc.)
  * @returns The fetch Response
- * @throws Error if Dyad Pro API key is not configured
+ * @throws Error if OasisOS Pro API key is not configured
  */
 export async function engineFetch(
   ctx: Pick<AgentContext, "dyadRequestId" | "abortSignal">,
@@ -72,7 +72,7 @@ export async function engineFetch(
   const apiKey = settings.providerSettings?.auto?.apiKey?.value;
 
   if (!apiKey) {
-    throw new DyadError("Dyad Pro API key is required", DyadErrorKind.Auth);
+    throw new DyadError("OasisOS Pro API key is required", DyadErrorKind.Auth);
   }
 
   const {

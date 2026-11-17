@@ -233,7 +233,7 @@ function getDyadEngineApiKey() {
   const apiKey = settings.providerSettings?.auto?.apiKey?.value;
 
   if (!apiKey && !IS_TEST_BUILD) {
-    throw new Error("Dyad Pro API key is required for cloud sandboxes.");
+    throw new Error("OasisOS Pro API key is required for cloud sandboxes.");
   }
 
   return apiKey;
@@ -1016,7 +1016,7 @@ export function queueCloudSandboxSnapshotSync(input: {
 }
 
 export async function reconcileCloudSandboxes(): Promise<string[]> {
-  // Without a Dyad Pro API key there are no cloud sandboxes to reconcile;
+  // Without a OasisOS Pro API key there are no cloud sandboxes to reconcile;
   // skip instead of logging an auth error on every startup.
   const apiKey = readSettings().providerSettings?.auto?.apiKey?.value;
   if (!apiKey && !IS_TEST_BUILD) {

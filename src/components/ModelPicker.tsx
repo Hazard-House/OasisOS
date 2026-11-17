@@ -832,7 +832,7 @@ export function ModelPicker() {
   };
 
   // Non-Pro users can still use any cloud model with their own API key, so a
-  // model is only locked when neither Dyad Pro nor a provider key can run it.
+  // model is only locked when neither OasisOS Pro nor a provider key can run it.
   // Custom and local providers are never locked: Pro doesn't unlock those.
   // While settings/env vars are still loading we can't tell whether a key
   // exists, so fail open rather than flash a lock at env-var-configured users.
@@ -1187,7 +1187,7 @@ export function ModelPicker() {
         aria-label={
           isFreeProviderRow
             ? `${model.displayName} — requires an API key from ${getProviderDisplayName(providerId)}`
-            : `${model.displayName} — requires Dyad Pro or an API key from ${getProviderDisplayName(providerId)}`
+            : `${model.displayName} — requires OasisOS Pro or an API key from ${getProviderDisplayName(providerId)}`
         }
         onClick={() => handleLockedModelClick(providerId, model)}
       >
@@ -1669,7 +1669,7 @@ export function ModelPicker() {
               <>
                 <div className="px-2 py-3 bg-gradient-to-r from-indigo-50 to-sky-50 dark:from-indigo-950/50 dark:to-sky-950/50">
                   <p className="text-sm text-indigo-700 dark:text-indigo-300 mb-2">
-                    Upgrade from Dyad Pro trial to unlock more models.
+                    Upgrade from OasisOS Pro trial to unlock more models.
                   </p>
                   <Button
                     variant="outline"
@@ -1682,7 +1682,7 @@ export function ModelPicker() {
                       setOpen(false);
                     }}
                   >
-                    Upgrade to Dyad Pro
+                    Upgrade to OasisOS Pro
                   </Button>
                 </div>
                 <DropdownMenuSeparator />
@@ -1965,7 +1965,7 @@ export function ModelPicker() {
                   <div className="flex items-center gap-2 w-full">
                     <SparklesIcon className="size-3.5 text-indigo-600 dark:text-indigo-300 shrink-0" />
                     <span className="text-[13px] font-medium text-indigo-700 dark:text-indigo-300">
-                      Unlock all models with Dyad Pro
+                      Unlock all models with OasisOS Pro
                     </span>
                   </div>
                 </DropdownMenuItem>
@@ -2014,12 +2014,12 @@ export function ModelPicker() {
             <>
               <DialogHeader>
                 <DialogTitle>
-                  Unlock {unlockTarget?.model.displayName} with Dyad Pro
+                  Unlock {unlockTarget?.model.displayName} with OasisOS Pro
                 </DialogTitle>
                 <DialogDescription>
-                  Dyad Pro gives you {unlockTarget?.model.displayName} and every
-                  other leading AI model with one subscription — no API keys
-                  needed.
+                  OasisOS Pro gives you {unlockTarget?.model.displayName} and
+                  every other leading AI model with one subscription — no API
+                  keys needed.
                 </DialogDescription>
               </DialogHeader>
               <div className="flex flex-col gap-3">
@@ -2027,7 +2027,7 @@ export function ModelPicker() {
                   className="cursor-pointer w-full"
                   onClick={handleUnlockDialogUpgradeClick}
                 >
-                  Get Dyad Pro
+                  Get OasisOS Pro
                 </Button>
                 <button
                   type="button"

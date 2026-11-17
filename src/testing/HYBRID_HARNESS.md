@@ -116,7 +116,7 @@ Common option recipes:
   mode selector in the UI.
 - **multiple chats** — `const c2 = await harness.createChat()` then
   `harness.mount({ chatId: c2 })`.
-- **Dyad Pro / engine routes** — pass `engine: true` so
+- **OasisOS Pro / engine routes** — pass `engine: true` so
   `DYAD_ENGINE_URL` / `DYAD_GATEWAY_URL` point at the harness fake server.
 
 ### The harness object
@@ -383,7 +383,7 @@ no longer need a hoisted relay just to know the fake server's ephemeral port.
 
 - **`chatMode` option trap.** The harness `chatMode` option only seeds
   `settings.selectedChatMode`; `ChatInput` submits the chat row's mode /
-  effective default, and with Dyad Pro enabled the effective default is
+  effective default, and with OasisOS Pro enabled the effective default is
   `local-agent`. An ask-mode hybrid test silently runs in local-agent mode
   unless it drives the real selector: `await harness.selectChatMode("ask")`
   (see `local_agent_ask.integration.test.ts`).

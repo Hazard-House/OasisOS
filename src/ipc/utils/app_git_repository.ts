@@ -85,7 +85,7 @@ export async function assertAppFolderExists(appPath: string): Promise<void> {
   }
   await throwIfAppFolderUnusable(appPath, appDirErrorCode);
   throw new DyadError(
-    `Dyad couldn't access the app folder '${appPath}' (${appDirErrorCode}).`,
+    `OasisOS couldn't access the app folder '${appPath}' (${appDirErrorCode}).`,
     DyadErrorKind.External,
   );
 }

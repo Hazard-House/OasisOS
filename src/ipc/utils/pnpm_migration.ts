@@ -174,7 +174,7 @@ export async function applyPnpmVersionMigration({
   const allowBuildsResult = await ensurePnpmAllowBuildsConfigured({ appPath });
 
   // Update the pin before reinstalling so pnpm writes a lockfile that matches
-  // the package metadata Dyad will commit. If the install fails, restore the
+  // the package metadata OasisOS will commit. If the install fails, restore the
   // original package.json so the failed migration does not hide future prompts.
   let originalPackageJsonContent: string;
   try {

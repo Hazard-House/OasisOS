@@ -224,7 +224,7 @@ describe("describePushSummary edge wording", () => {
   it("keeps the mismatch warning but says nothing is missing yet", () => {
     expect(describePushSummary(wrongBranch, "GitHub")).toEqual({
       kind: "warning",
-      message: "You're working on main, but Dyad syncs feature.",
+      message: "You're working on main, but OasisOS syncs feature.",
       detail:
         "feature was already up to date. Everything on main is already on GitHub's feature, but new commits on main won't be synced.",
     });
@@ -280,7 +280,7 @@ describe("describePushSummary edge wording", () => {
       ),
     ).toEqual({
       kind: "warning",
-      message: "Dyad couldn't confirm the push.",
+      message: "OasisOS couldn't confirm the push.",
       detail:
         "Git reported success, but GitLab's main couldn't be read afterwards.",
     });
@@ -343,7 +343,7 @@ describe("classifyPushOutcome with an unreadable branch", () => {
       ),
     ).toEqual({
       kind: "warning",
-      message: "Dyad couldn't confirm the push.",
+      message: "OasisOS couldn't confirm the push.",
       detail:
         "Git reported success, but your current commit couldn't be read afterwards.",
     });

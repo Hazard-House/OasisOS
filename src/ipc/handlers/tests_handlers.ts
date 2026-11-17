@@ -2135,10 +2135,10 @@ async function sandboxEnvMatchesCapture(
 
 /** Shared by both drift checks, so the user reads one explanation. */
 const CONFIGURATION_CHANGED_MESSAGE =
-  "This app's database or run configuration changed while Dyad was preparing the test sandbox, so the run was stopped before it could use stale settings. Run the tests again.";
+  "This app's database or run configuration changed while OasisOS was preparing the test sandbox, so the run was stopped before it could use stale settings. Run the tests again.";
 
 const PROCESS_SETTLEMENT_FAILED_MESSAGE =
-  "Dyad couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart Dyad to retry cleanup.";
+  "OasisOS couldn't confirm that all test processes stopped. Cleanup was deferred, and conflicting operations for this app are blocked. Stop any remaining test processes, then restart OasisOS to retry cleanup.";
 
 /**
  * The app configuration the snapshot was taken under.
@@ -2536,8 +2536,8 @@ async function executeAppTestsWithIsolation(
         : undefined);
     const restoreMessage =
       provider === "supabase-test-user"
-        ? "Dyad couldn't delete the temporary test user it created in your Supabase project. Your app settings were not changed; Dyad will retry the deletion on next startup."
-        : "Dyad couldn't finish cleaning up the isolated test database. Your app settings were not changed; Dyad will retry remote cleanup on next startup.";
+        ? "OasisOS couldn't delete the temporary test user it created in your Supabase project. Your app settings were not changed; OasisOS will retry the deletion on next startup."
+        : "OasisOS couldn't finish cleaning up the isolated test database. Your app settings were not changed; OasisOS will retry remote cleanup on next startup.";
     return {
       ...result,
       // Appended rather than substituted: an isolation-setup failure explains
@@ -2593,13 +2593,13 @@ async function executeAppTestsWithIsolation(
       : runtimeMode !== "host"
         ? {
             disclosure: `Tests run against your normal preview because isolated test servers aren't available in ${runtimeMode} runtime yet.`,
-            neonRefusal: `Isolated E2E test servers aren't available in ${runtimeMode} runtime yet, and Dyad won't run Neon tests against your real database. Switch to host runtime to run tests for this app.`,
+            neonRefusal: `Isolated E2E test servers aren't available in ${runtimeMode} runtime yet, and OasisOS won't run Neon tests against your real database. Switch to host runtime to run tests for this app.`,
           }
         : {
             disclosure:
               "Tests run against your normal preview because isolated test servers are turned off in Settings.",
             neonRefusal:
-              "Isolated test servers are turned off in Settings, and Dyad won't run Neon tests against your real database. Turn them back on to run tests for this app.",
+              "Isolated test servers are turned off in Settings, and OasisOS won't run Neon tests against your real database. Turn them back on to run tests for this app.",
           };
     if (sandboxUnavailable) {
       finalResult = withIsolationCleanupWarning(
@@ -3127,7 +3127,7 @@ async function executeAppTestsWithIsolation(
                 results: [],
                 infraError: {
                   message:
-                    "Dyad couldn't authorize the isolated test server with Neon Auth, so the tests were not run. Check your Neon connection and try again.",
+                    "OasisOS couldn't authorize the isolated test server with Neon Auth, so the tests were not run. Check your Neon connection and try again.",
                 },
                 isolation: prepared.isolation,
               };

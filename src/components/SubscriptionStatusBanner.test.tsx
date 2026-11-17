@@ -92,17 +92,17 @@ describe("SubscriptionStatusBanner", () => {
   it.each([
     {
       alert: "payment_past_due" as const,
-      text: "Payment failed. Update your payment method to keep Dyad Pro active.",
+      text: "Payment failed. Update your payment method to keep OasisOS Pro active.",
       action: "Update payment method",
     },
     {
       alert: "subscription_ending" as const,
-      text: "Your Dyad Pro subscription ends in 20 days. You will lose 650 credits.",
+      text: "Your OasisOS Pro subscription ends in 20 days. You will lose 650 credits.",
       action: "Manage subscription",
     },
     {
       alert: "subscription_paused" as const,
-      text: "Your Dyad Pro subscription is paused.",
+      text: "Your OasisOS Pro subscription is paused.",
       action: "Resume subscription",
     },
   ])("renders the $alert localized variant", ({ alert, text, action }) => {
@@ -172,7 +172,7 @@ describe("SubscriptionStatusBanner", () => {
 
     expect(
       screen.getByText(
-        "Your Dyad Pro subscription ends in 1 day. You will lose 1 credit.",
+        "Your OasisOS Pro subscription ends in 1 day. You will lose 1 credit.",
       ),
     ).not.toBeNull();
   });
@@ -188,7 +188,7 @@ describe("SubscriptionStatusBanner", () => {
 
     expect(
       screen.getByText(
-        "Your Dyad Pro subscription ends today. You will lose 650 credits.",
+        "Your OasisOS Pro subscription ends today. You will lose 650 credits.",
       ),
     ).not.toBeNull();
   });
@@ -280,9 +280,17 @@ describe("SubscriptionStatusBanner", () => {
   });
 
   it.each([
-    ["pt-BR", "Sua assinatura do Dyad Pro está pausada.", "Retomar assinatura"],
-    ["zh-CN", "您的 Dyad Pro 订阅已暂停。", "恢复订阅"],
-    ["fr", "Votre abonnement Dyad Pro est en pause.", "Reprendre l'abonnement"],
+    [
+      "pt-BR",
+      "Sua assinatura do OasisOS Pro está pausada.",
+      "Retomar assinatura",
+    ],
+    ["zh-CN", "您的 OasisOS Pro 订阅已暂停。", "恢复订阅"],
+    [
+      "fr",
+      "Votre abonnement OasisOS Pro est en pause.",
+      "Reprendre l'abonnement",
+    ],
   ])("renders localized copy in %s", async (language, text, action) => {
     await i18n.changeLanguage(language);
     mocks.status = {

@@ -540,7 +540,7 @@ export async function ensureBuildToken(
     "POST",
     apiPath`/accounts/${accountId}/builds/tokens`,
     {
-      build_token_name: "Dyad",
+      build_token_name: "OasisOS",
       build_token_secret: token,
       cloudflare_token_id: tokenId,
     },

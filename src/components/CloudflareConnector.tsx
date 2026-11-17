@@ -951,8 +951,8 @@ function WorkerForm({
 
       {app?.neonProjectId && (
         <div className={noticeClass} data-testid="cloudflare-neon-notice">
-          Dyad will connect this Worker to your {neonBranch} Neon database and
-          allow sign-in from the Worker's address.
+          OasisOS will connect this Worker to your {neonBranch} Neon database
+          and allow sign-in from the Worker's address.
         </div>
       )}
 

@@ -11,7 +11,7 @@ import { expect } from "@playwright/test";
 testSkipIfWindows(
   "free agent quota - full flow: exhausted Agent stays selected until the user switches",
   async ({ po }) => {
-    // Set up WITHOUT Dyad Pro - use test provider instead
+    // Set up WITHOUT OasisOS Pro - use test provider instead
     await po.setUp({ autoApprove: true });
     await po.importApp("minimal");
 
@@ -50,7 +50,7 @@ testSkipIfWindows(
       "You have used all 20 messages for the free Agent mode today",
     );
     await expect(
-      po.page.getByRole("button", { name: "Upgrade to Dyad Pro" }),
+      po.page.getByRole("button", { name: "Upgrade to OasisOS Pro" }),
     ).toBeVisible();
     await expect(
       po.page.getByRole("button", { name: "Switch to Build mode" }),
@@ -67,7 +67,7 @@ testSkipIfWindows(
       "You have used all 20 free Basic Agent messages for today",
     );
     await expect(quotaError).toContainText("Your quota resets at");
-    await expect(quotaError.getByText("Upgrade to Dyad Pro")).toBeVisible();
+    await expect(quotaError.getByText("Upgrade to OasisOS Pro")).toBeVisible();
     await expect(
       quotaError.getByRole("button", { name: "Switch to Build" }),
     ).toBeVisible();
@@ -115,7 +115,7 @@ testSkipIfWindows(
 testSkipIfWindows(
   "free agent quota - quota resets after 24 hours",
   async ({ po }) => {
-    // Set up WITHOUT Dyad Pro - use test provider instead
+    // Set up WITHOUT OasisOS Pro - use test provider instead
     await po.setUp({ autoApprove: true });
     await po.importApp("minimal");
 
