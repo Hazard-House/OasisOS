@@ -1380,7 +1380,9 @@ describe("push summaries", () => {
         commitsNotOnRemote: 1,
         remoteTip: "c872cc3",
       }).banner?.detail,
-    ).toBe("OasisOS pushed 1 commit to main. 1 commit is not on GitHub's main.");
+    ).toBe(
+      "OasisOS pushed 1 commit to main. 1 commit is not on GitHub's main.",
+    );
   });
 
   it("falls back to the two commits when nothing else explains the gap", () => {

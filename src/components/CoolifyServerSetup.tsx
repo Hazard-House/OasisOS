@@ -376,10 +376,10 @@ export function CoolifyServerSetup({
   return (
     <div className="space-y-3" data-testid="coolify-server-setup">
       <p className="text-sm text-muted-foreground">
-        OasisOS allows you to self-host an instance of Coolify to deploy your apps.
-        To install it you need a Linux server with root access and about 2GB of
-        memory. Easiest if you have not created the server yet, since the key
-        below can go in at that point.
+        OasisOS allows you to self-host an instance of Coolify to deploy your
+        apps. To install it you need a Linux server with root access and about
+        2GB of memory. Easiest if you have not created the server yet, since the
+        key below can go in at that point.
       </p>
 
       {/* First because nothing else can happen until it is done. */}
@@ -617,15 +617,15 @@ export function CoolifyServerSetup({
           className="text-sm text-muted-foreground"
           data-testid="coolify-setup-holds-account"
         >
-          OasisOS is holding the admin password for {heldServerUrl}, and it has the
-          only copy. Sign out of Coolify to set up another — that shows the
+          OasisOS is holding the admin password for {heldServerUrl}, and it has
+          the only copy. Sign out of Coolify to set up another — that shows the
           password one last time before forgetting it.
         </p>
       )}
       {!inspectionForHost && host.trim() && (
         <p className="text-sm text-muted-foreground">
-          Check the server first. OasisOS shows you its fingerprint, and installs
-          only onto the machine that answered.
+          Check the server first. OasisOS shows you its fingerprint, and
+          installs only onto the machine that answered.
         </p>
       )}
 

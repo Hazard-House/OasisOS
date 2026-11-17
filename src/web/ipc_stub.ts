@@ -219,36 +219,30 @@ export function resetWebIpcState(): void {
 declare global {
   interface Window {
     __OASIS_WEB_DEMO__?: boolean;
-    electron?: {
-      ipcRenderer: {
-        invoke: (channel: string, ...args: unknown[]) => Promise<unknown>;
-        invokeEnvelope: (
-          channel: string,
-          ...args: unknown[]
-        ) => Promise<unknown>;
-        send: (channel: string, ...args: unknown[]) => void;
-        on: (
-          channel: string,
-          listener: (...args: unknown[]) => void,
-        ) => () => void;
-        removeAllListeners: (channel: string) => void;
-        removeListener: (
-          channel: string,
-          listener: (...args: unknown[]) => void,
-        ) => void;
-      };
-      webFrame: {
-        setZoomFactor: (factor: number) => void;
-        getZoomFactor: () => number;
-      };
-    };
   }
 }
+
+type WebDemoElectron = {
+  ipcRenderer: {
+    invoke: (channel: string, ...args: unknown[]) => Promise<unknown>;
+    send: (channel: string, ...args: unknown[]) => void;
+    on: (channel: string, listener: (...args: unknown[]) => void) => () => void;
+    removeAllListeners: (channel: string) => void;
+    removeListener: (
+      channel: string,
+      listener: (...args: unknown[]) => void,
+    ) => void;
+  };
+  webFrame: {
+    setZoomFactor: (factor: number) => void;
+    getZoomFactor: () => number;
+  };
+};
 
 export function installWebIpcStub(): void {
   window.__OASIS_WEB_DEMO__ = true;
   const listeners = new Map<string, Set<(...args: unknown[]) => void>>();
-  window.electron = {
+  (window as unknown as Window & { electron: WebDemoElectron }).electron = {
     ipcRenderer: {
       invoke: (channel, ...args) =>
         Promise.resolve(handleWebIpc(channel, args[0])),
