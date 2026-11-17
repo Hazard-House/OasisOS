@@ -7,8 +7,7 @@ import { useRouter } from "@tanstack/react-router";
 import { useSettings } from "@/hooks/useSettings";
 import { Button } from "@/components/ui/button";
 import { AppAvatar } from "@/components/AppAvatar";
-// @ts-ignore
-import logo from "../../assets/logo.svg";
+import { OasisLogo } from "@/components/OasisLogo";
 import { providerSettingsRoute } from "@/routes/settings/providers/$provider";
 import { cn } from "@/lib/utils";
 import { useDeepLink } from "@/contexts/DeepLinkContext";
@@ -99,7 +98,7 @@ export const TitleBar = () => {
         <div className="flex items-center shrink-0">
           <div className={`${showWindowControls ? "pl-2" : "pl-18"}`}></div>
 
-          <img src={logo} alt="OasisOS" className="ml-2 w-5 h-5 shrink-0" />
+          <OasisLogo className="ml-2 h-5 w-5" />
 
           <Tooltip>
             <TooltipTrigger

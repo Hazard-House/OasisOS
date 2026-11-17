@@ -55,8 +55,7 @@ import { activeSettingsSectionAtom } from "@/atoms/viewAtoms";
 import { SECTION_IDS, SETTING_IDS } from "@/lib/settingsSearchIndex";
 import { SubagentSettings } from "@/components/settings/SubagentSettings";
 import { RunTypeScriptForWholeProjectSwitch } from "@/components/RunTypeScriptForWholeProjectSwitch";
-// @ts-ignore
-import logo from "../../assets/logo.svg";
+import { OasisLogo } from "@/components/OasisLogo";
 
 const hint = "text-[13px] leading-relaxed text-muted-foreground";
 
@@ -148,7 +147,7 @@ export default function SettingsPage() {
           id="about"
           className="mb-8 flex items-center gap-4 rounded-xl border border-border/70 bg-card p-4"
         >
-          <img src={logo} alt="OasisOS" className="h-14 w-14 shrink-0" />
+          <OasisLogo className="h-14 w-14" />
           <div>
             <h2 className="text-lg font-semibold tracking-tight text-foreground">
               About OasisOS
